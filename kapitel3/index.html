@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title></title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/print/paper.css" id="pdf">
+        <link rel="stylesheet" href="css/unreel.css">
+    </head>
+    
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                     <h2>Statiska tekniker</h2>
+
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Statiska tekniker och testprocessen</h3>
+
+                        <ul>
+                            <li>Granskning av arbetsprodukter (inklusive kod), ej exekvering av programvaran</li>
+                            <li>Kan utföras manuellt eller med verktygsstöd</li>
+                            <li>Hittar fel (defekter), till skillnad från felsymptom</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Skillnad mot dynamisk testning</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Till skillnad mot dynamisk testning, som kräver att programvaran exekveras,
+                            så förlitar sig statiska testtekniker på <strong>manuell kontroll (granskning) och automatiserad analys (statisk analys)</strong> av
+                            källkoden eller andra producerade dokument utan att programvaran exekveras.</p>
+                        <p
+                        style="font-size: 20pt; text-align: left; line-height: 24pt;">Granskningar är ett sätt att <strong>testa arbetsprodukter</strong> (inklusive
+                            koden) och kan med fördel utföras före dynamisk testning. Defekter som
+                            upptäcks genom granskningar i ett tidigt skede (t ex granskningar av krav)
+                            är oftast mycket <strong>billigare att rätta</strong> än de defekter som
+                            hittas när man utför dynamisk testning av redan utvecklad kod.</p>
+                            <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Granskningar kan utföras helt manuellt, men det finns också verktygsstöd
+                                för detta. Den huvudsakliga manuella aktiviteten är att granska arbetsprodukten
+                                av ett arbete och kommentera de avvikelser man hittar. Alla arbetsprodukter
+                                kan granskas, inklusive kravspecifikationer, designspecifikationer, kod,
+                                testplaner, testspecifikationer, testfall, testskript, användarmanualer
+                                eller webbsidor.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Fördelar</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Fördelarna med granskningar är <strong>tidig fellokalisering och rättning</strong>,
+                            ökad produktivitet inom utveckling, minskad utvecklingstid, minskad tid
+                            och kostnad för testning, minskade produktlivstidskostnader, färre fel
+                            i senare faser och förbättrad kommunikation.</p>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;"><strong>Vid granskningar kan ofullständigheter upptäckas</strong>, t.ex.
+                            att krav saknas i en specifikation, vilket är svårt i dynamisk testning.</p>
+                        <p
+                        style="font-size: 20pt; text-align: left; line-height: 24pt;">Granskningar, statisk analys och dynamisk testning har samma övergripande
+                            mål – påvisa fel.</p>
+                            <p style="font-size: 20pt; text-align: left; line-height: 24pt;">De kompletterar varandra: de olika teknikerna ger möjlighet att effektivt
+                                och ändamålsenligt hitta olika typer av fel.</p>
+                            <p style="font-size: 20pt; text-align: left; line-height: 24pt;">I motsats till dynamisk testning hittar statiska tekniker <strong>fel (defekter) snarare än själva felsymptomen</strong>.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Typiska defekter</h4>
+
+                        <p style="text-align: left;">Typiska defekter som är lättare att hitta med granskningar än med dynamisk
+                            testning innefattar:</p>
+                        <div class="" style="width: 70%; float: left;">
+                            <ul>
+                                <li>avvikelser från standard</li>
+                                <li>kravdefekter</li>
+                                <li>designdefekter</li>
+                                <li>otillräcklig underhållbarhet</li>
+                                <li>felaktigt specificerade gränssnitt.</li>
+                            </ul>
+                        </div>
+                        <div class="" style="width: 30%; float: left;">
+                            <img src="usb.jpg" width="250" height="166">
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Granskningsprocess</h3>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">De olika typerna av granskningar varierar från att vara informella, som
+                            kännetecknas av avsaknad av skrivna instruktioner till granskare, till
+                            systematiska, som kännetecknas av delaktighet av teamet, dokumenterade
+                            granskningsresultat och dokumenterad granskningsprocess.</p>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Formaliteten hos en granskningsprocess är relaterad till faktorer såsom
+                            mogenhetsgraden i utvecklingsprocessen, varje legalt eller regulatoriskt
+                            krav eller behovet av uppföljning.</p>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Hur en granskning genomförs är beroende av de överenskomna målen för granskningen
+                            (t.ex. hitta defekter, vinna samförstånd, utbilda testare och nya teammedlemar,
+                            eller diskussion och beslut med konsensus).</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Aktiviteter i en formell granskning</h4>
+
+                        <div class="" style="width: 70%; float: left;">
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;">1. <strong>Planering</strong>: Definiera granskningskriterier, Välja personal,
+                                Tilldela roller, Sätta upp start- och avslutskriterier</p>
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;">2. <strong>Start</strong>: Dela ut dokument, Förklara målsättningen, processen
+                                och dokumenten som skall granskas för alla deltagare.</p>
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;">3. <strong>Individuella förberedelser</strong>: Arbete som genomförs enskilt
+                                av varje deltagare före granskningsmötet, Notera möjliga defekter, frågor
+                                och kommentarer.</p>
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;">4. <strong>Genomgång/utvärdering/dokumentering av resultat (Granskningsmöte)</strong>:
+                                Diskussioner eller loggning, med dokumenterade resultat eller med mötesprotokoll.
+                                Ge rekommendationer för hur defekterna skall hanteras eller fatta beslut
+                                om defekterna.&nbsp;</p>
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;">5. <strong>Omarbete</strong>: Åtgärda de funna defekterna, utförs oftast
+                                av författaren. Uppdatera och dokumentera status på defekterna (vid formella
+                                granskningar)</p>
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;">6. <strong>Uppföljning</strong>: Kontrollera att alla defekter har blivit
+                                tilldelade för åtgärd, Sammanställa mätetal, Kontrollera att avslutskriterier
+                                är uppnådda (vid mer formella granskningstyper).</p>
+                        </div>
+                        <div class="" style="width: 30%; float: left;">
+                            <img src="granskningsprocess.png" width="200" height="460">
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Roller och ansvar</h4>
+
+                        <p style="font-size: 16pt; text-align: left; line-height: 20pt;">En typisk formell granskning innehåller följande roller:</p>
+                        <p style="font-size: 16pt; text-align: left; line-height: 20pt;"><strong>Ledare/chef</strong>: bestämmer över genomförandet av granskningar,
+                            avsätter tid i projektplaner och avgör om målsättningen för granskningarna
+                            blivit uppfyllda.</p>
+                        <p style="font-size: 16pt; text-align: left; line-height: 20pt;"><strong>Moderator</strong>: den person som leder granskningen av dokumentet
+                            eller uppsättningen av dokument. Det inkluderar planering av granskningen,
+                            hålla mötet, följa upp efter mötet och om nödvändigt medla mellan olika
+                            åsikter. Moderatorn är oftast den person som ligger bakom en lyckad granskning.</p>
+                        <p
+                        style="font-size: 16pt; text-align: left; line-height: 20pt;"><strong>Författare</strong>: eller den person som ansvarar för dokumentet
+                            eller dokumenten som skall granskas.</p>
+                            <p style="font-size: 16pt; text-align: left; line-height: 20pt;"><strong>Granskare</strong>: individer med en specifik teknisk eller verksamhetsbakgrund
+                                som, efter de nödvändiga förberedelserna, identifierar och beskriver t.ex.
+                                defekterna i det som granskats. Val av granskare skall göras så att de
+                                representerar olika områden och roller i granskningsprocessen och skall
+                                delta i granskningsmöten.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Granskningstyper</h4>
+
+                        <div class="" style="width: 45%; float: left; background-color: lightgreen; margin: 5pt; padding: 5pt;">
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;"><span style="font-size: 16pt;"><strong>1. Informell granskning</strong> </span> 
+                                <br><strong>ingen formell process</strong>; kan ske genom <strong>parprogrammering</strong> eller
+                                att en teknisk ledare leder design- och kod-granskningen; frivilligt dokumenterad;
+                                nyttan av granskningen kan variera beroende på granskaren; huvudsyfte:
+                                att <strong>på billigaste sätt att uppnå en viss nytta.</strong>
+
+                            </p>
+                        </div>
+                        <div class="" style="width: 45%; float: right; background-color: lightpink; margin: 5pt; padding: 5pt;">
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;"><span style="font-size: 16pt;"><strong>2. Genomgång</strong></span> 
+                                <br>mötet <strong>leds av författaren</strong>; kan ske med hjälp av scenarion,
+                                torrsimulering, grupp med kolleger; ej tidsbegränsade sammanträden; följande
+                                kan vara valfritt: granskarna är förberedda, granskningsrapport skrivs,
+                                avvikelselista tas fram och sekreterare (som inte är författaren) utses;
+                                kan variera i utförande från ganska informellt till mycket formellt; <strong>huvudsyfte: lärande, ge förståelse, hitta defekter</strong>.</p>
+                        </div>
+                        <div class="" style="width: 45%; float: left; background-color: lightgrey; margin: 5pt; padding: 5pt;">
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;"><span style="font-size: 16pt;"><strong>3. Teknisk granskning</strong> </span> 
+                                <br><strong>dokumenterad, definierad defektutpekningsprocess</strong> som inkluderar
+                                kolleger och <strong>tekniska experter</strong>, ledningens deltagande är
+                                valfritt; kan utföras som en granskning med kolleger utan ledarens/chefens
+                                deltagande; <strong>önskvärt att granskningen leds av en utbildad moderator</strong> (inte
+                                författaren); förberedelse innan mötet; valfritt användande av checklistor;
+                                granskningsrapport som inkluderar defektlista, <strong>beslut om programvaran lever upp till kraven</strong> och,
+                                där det är möjligt, rekommenderade åtgärder för defekterna; kan variera
+                                i utförande från ganska informellt till mycket formellt; huvudsyfte: diskussioner,
+                                beslutsfattande, utvärdering av alternativ, <strong>hitta defekter, lösa tekniska problem och kontroll av att det granskade stämmer överens med specifikationer, planer, regelverk och standarder</strong>.</p>
+                        </div>
+                        <div class="" style="width: 45%; float: right; background-color: lightsteelblue; margin: 5pt; padding: 5pt;">
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;"><span style="font-size: 16pt;"><strong>4. Inspektion</strong></span> 
+                                <br> <strong>leds av en utbildad moderator</strong> (inte av författaren); v<strong>anligtvis genomförd av jämlika kolleger</strong>;
+                                definierade roller; inkluderar mätetal; f<strong>ormell process som är baserad på regler och checklistor</strong>;
+                                definierade start- och avslutskriterier för att acceptera programvaran;
+                                förberedelser innan mötet; inspektionsrapport, lista över iakttagelser;
+                                formell uppföljningsprocess; (valfritt med processförbättringsprocess)
+                                valfritt med uppläsare; <strong>huvudsyfte: hitta defekter</strong>.</p>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Framgångsfaktorer vid granskningar</h4>
+
+                        <div class="" style="width: 70%; float: left;">
+                            <ul>
+                                <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Varje granskning har en klar fördefinierad målsättning.</li>
+                                <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Rätt personer för de uppsatta granskningsmålen är inblandade.</li>
+                                <li
+                                style="font-size: 12pt; text-align: left; line-height: 16pt;">Testare är värdefulla granskare som aktivt bidrar till att höja granskningskvaliteten
+                                    och som genom sitt deltagande lär sig produkten och därför kan förbereda
+                                    testningen tidigare.</li>
+                                    <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Defekter som hittas tas väl emot och uttrycks objektivt.</li>
+                                    <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Mjuka faktorer och psykologiska aspekter måste hanteras (t.ex. att göra
+                                        granskningen till en positiv erfarenhet för författaren).</li>
+                                    <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Förtroende: <strong>resultatet av granskningen används inte till att utvärdera deltagarna</strong>.</li>
+                                    <li
+                                    style="font-size: 12pt; text-align: left; line-height: 16pt;">Granskningsteknikerna anpassas så att de passar programvaran och granskarna
+                                        och för att uppnå granskningens målsättning.</li>
+                                        <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Om det är tillämpligt så används checklistor eller roller för att öka
+                                            effektiviteten i att hitta defekter.</li>
+                                        <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Att utbildning ges i granskningstekniker, speciellt i de mer formella
+                                            teknikerna, såsom inspektioner.</li>
+                                        <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Ledningen stödjer en bra granskningsprocess (t ex genom att avsätta tillräckligt
+                                            med tid för granskningsaktiviteter i projekttidsplaner).</li>
+                                        <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Det finns en <strong>tonvikt på lärande och processförbättringar</strong>.</li>
+                            </ul>
+                        </div>
+                        <div class="" style="width: 30%; float: left;">
+                            <img src="nyckel-till-framgang.jpg" width="250" height="188">
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Statisk analys med verktyg</h3>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Målsättningen med statisk analys är att hitta defekter i källkod och programvarumodeller.
+                            Statisk analys utförs genom granskning med hjälp av ett verktyg utan att
+                            programvaran exekveras; dynamisk testning exekverar programkoden. Statisk
+                            analys kan lokalisera defekter som är svåra att upptäcka med dynamisk testning.
+                            Precis som vid granskning hittar statisk analys defekter snarare än felyttringar.
+                            Statiska analysverktyg analyserar programkoden (t ex kontrollflöde och
+                            dataflöde), såväl som det utdata som genereras t.ex. HTML och XML.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Vad kan hittas av statiskt analysverktyg?</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">referens till en variabel med ett icke definierat värde;</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">inkonsekvent gränssnitt mellan moduler och komponenter;</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">variabler som inte används eller är felaktigt deklarerade;</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">kod som aldrig används, så kallad död kod;</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">saknad eller felaktig logik (eventuellt oändliga loopar)</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Onödigt komplicerade kodkonstruktioner avvikelser mot programmeringsregler;</li>
+                            <li
+                            style="font-size: 20pt; text-align: left; line-height: 24pt;">säkerhetssårbarheter;</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">syntaxfel i kod och programvarumodeller.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Exempel på verktyg: SonarQube</h4>
+
+                        <p>
+                            <img class="" src="sonarqube.png" alt="" width="800" height="435">
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Quiz</h3>
+
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                        <iframe title="iframe example 1" src="http://www.bluebottle.se/courses/iths/quizpage.html?quiz=2&amp;questions=3"
+                        width="800" height="400"></iframe>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                        <iframe title="iframe example 1" src="http://www.bluebottle.se/courses/iths/chartpage.html?quiz=2&amp;refresh=5"
+                        width="800" height="460"></iframe>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script>
+            Reveal.initialize({"zoomKey":"ctrl","pdfMaxPagesPerSlide":1,"autoPlayMedia":"null",
+            dependencies: [
+            {src: "plugin/notes/notes.js", async: true},
+            {src: "plugin/highlight/highlight.js", async: true, callback: function() {hljs.initHighlightingOnLoad();}},
+            {src: "plugin/zoom-js/zoom.js", async: true},
+            {src: "plugin/search/search.js", async: true},
+            {src: "plugin/katex/katex.js", async: true},
+            {src: "plugin/chart/Chart.min.js"},
+            {src: "plugin/chart/csv2chart.js"}]
+            });
+        </script>
+    </body>
+
+</html>

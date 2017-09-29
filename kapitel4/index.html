@@ -1,0 +1,787 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title></title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/print/paper.css" id="pdf">
+        <link rel="stylesheet" href="css/unreel.css">
+    </head>
+    
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                     <h2>Testdesigntekniker</h2>
+
+                </section>
+                <section data-background-color="#ffffff" data-background-image="iths.png"
+                data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                     <h3>Testutvecklingsprocesen</h3>
+
+                    <ul>
+                        <li style="font-size: 20pt; line-height: 24pt;"><strong>Testanalys</strong> - analysera testbasens dokumentation för att
+                            se vad som skall testas, d.v.s. identifiera testvillkoren. Säkerställ spårbarhet
+                            från testvillkor till specifikationer och krav.</li>
+                        <li style="font-size: 20pt; line-height: 24pt;"><strong>Testdesign</strong> - skapa testfall och testdata. Ett testfall
+                            består av indata, förutsättningar för utförande, förväntat resultat och
+                            sluttillstånd</li>
+                        <li style="font-size: 20pt; line-height: 24pt;"><strong>Testimplementering</strong> - En testinstruktion tas fram för varje
+                            testfall som beskriver en sekvens av åtgärder för genomförandet av ett
+                            test. Vid automatisk testning tas ett testskript fram.</li>
+                    </ul>
+                    <p>&nbsp;</p>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Kategorisering av tekniker för testdesign</h3>
+
+                        <ul>
+                            <li>Specifikationsbaserade tekniker (black-box)</li>
+                            <li>Strukturbaserade tekniker (white-box)</li>
+                            <li>Erfarenhetsbaserade tekniker</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Specifikationsbaserade tekniker</h4>
+
+                        <ul>
+                            <li style="font-size: 24pt; line-height: 28 pt;">Modeller används för att beskriva problemet som skall lösas, program eller
+                                dess komponenter. De kan vara formella eller informella.</li>
+                            <li style="font-size: 24pt; line-height: 28 pt;">Från dessa modeller härleds testfallen systematiskt.</li>
+                            <li style="font-size: 24pt; line-height: 28 pt;">Tekniker: <strong>Ekvivalensklassindelning</strong>, <strong>gränsvärdesanalys</strong>, <strong>beslutstabeller</strong>, <strong>tillståndsbaserad testning</strong>, <strong>användningsfallsbaserad testning</strong>
+
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Strukturbaserade tekniker</h4>
+
+                        <ul>
+                            <li style="font-size: 24pt; line-height: 28pt;">Kunskap om hur systemet är uppbyggt, exempelvis kod och design, används
+                                för att härleda testfall.</li>
+                            <li style="font-size: 24pt; line-height: 28pt;">Det går att mäta hur stor andel av ett program som täcks av testfall och
+                                fler testfall kan skrivas för att systematiskt öka täckningsgraden.</li>
+                            <li
+                            style="font-size: 24pt; line-height: 28pt;">Tekniker: <strong>Kodsatstestning</strong>, <strong>beslutstestning</strong>.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Erfarenhetsbaserade tekniker</h4>
+
+                        <ul>
+                            <li style="font-size: 24pt; line-height: 28 pt;">Kunskap och erfarenhet hos individer används för att härleda testfall:</li>
+                            <li
+                            style="font-size: 24pt; line-height: 28 pt;">En källa till information är kunskap om programvaran, dess användning
+                                och dess miljö hos testare, utvecklare, användare eller andra intressenter.</li>
+                                <li
+                                style="font-size: 24pt; line-height: 28 pt;">Kunskap om vanliga och sannolika fel och deras fördelning är en annan
+                                    källa till information.</li>
+                                    <li style="font-size: 24pt; line-height: 28 pt;">Tekniker: <strong>Felgissning</strong>, <strong>utforskande testning</strong>
+
+                                    </li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Specifikationsbaserade tekniker</h3>
+
+                        <ul>
+                            <li>Ekvivalensklassindelning</li>
+                            <li>Gränsvärdesanalys</li>
+                            <li>Testning m.h.a. beslutstabeller</li>
+                            <li>Tillståndsbaserad testning</li>
+                            <li>Användningsfallsbaserad testning</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Ekvivalensklassindelning</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; line-height: 24pt;">Vid ekvivalensklassindelning delas systemets eller programmets indata
+                                upp i grupper eller klasser där indata i varje grupp kommer att uppvisa
+                                likartat beteende, det vill säga de kommer sannolikt att hanteras på samma
+                                sätt.</li>
+                            <li style="font-size: 20pt; line-height: 24pt;">Ekvivalensklasser, som är resultatet av indelningen, kan identifieras
+                                för indata som är <strong>både giltigt (dvs. giltiga värden som skall accepteras) och ogiltigt (dvs. för ogiltiga värden som skall avfärdas)</strong>.</li>
+                            <li
+                            style="font-size: 20pt; line-height: 24pt;">Klasser kan också identifieras även för utdata, interna värden, tidsberoende
+                                värden (exempelvis före eller efter en händelse) samt för gränssnittsparametrar
+                                (nyttiga vid integrationstest).</li>
+                                <li style="font-size: 20pt; line-height: 24pt;">Tester kan skapas för att <strong>täcka alla giltiga och ogiltiga ekvivalensklasser</strong>.</li>
+                                <li
+                                style="font-size: 20pt; line-height: 24pt;">Ekvivalensklassindelning är användbart på <strong>alla testnivåer</strong>.</li>
+                                    <li
+                                    style="font-size: 20pt; line-height: 24pt;">Tekniken kan användas för att uppnå målen för <strong>in- och utdatatäckning</strong>.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>EKVIVALENSKLASSINDELNING exempel&nbsp;</h4>
+
+                        <p>
+                            <img src="ekvivalensklassindelning.png" width="800" height="457">
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Gränsvärdesanalys</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; line-height: 28pt;">Beteendet <strong>vid gränserna av varje ekvivalensklass uppvisar en större risk för fel</strong> än
+                                beteendet för värden inom ekvivalensklassen, därför är gränsvärdestestning
+                                ett fruktbart sätt att upptäcka fel.</li>
+                            <li style="font-size: 20pt; line-height: 28pt;">Gränserna består av det <strong>minimala och det maximala</strong> värdet
+                                inom en klass.</li>
+                            <li style="font-size: 20pt; line-height: 28pt;">Ett gränsvärde för en giltig klass kallas för <strong>giltigt gränsvärde</strong>,
+                                ett gränsvärde för en ogiltig klass för <strong>ogiltigt gränsvärde</strong>.</li>
+                            <li
+                            style="font-size: 20pt; line-height: 28pt;">Det går att konstruera tester som täcker både giltiga och ogiltiga gränsvärden.
+                                Vid designen av ett testfall, väljs ett test för varje gränsvärde.</li>
+                                <li
+                                style="font-size: 20pt; line-height: 28pt;">Gränsvärdesanalys kan användas på alla testnivåer.</li>
+                                    <li style="font-size: 20pt; line-height: 28pt;">Gränsvärdesanalys kan användas vid många olika testproblem t.ex. ekvivalensklasser
+                                        för inmatningsfält, tids- eller tabellgränser.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Gränsvärdesanalys exempel</h4>
+
+                        <p>
+                            <img class="" src="gränsvärdesanalys.png" alt="" width="800" height="432">
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Syfte</h4>
+
+                        <p style="font-size: 20pt; line-height: 24pt; text-align: left;">Reducera det totala antalet tester genom att gruppera ihop data eller
+                            testfall som testar samma sak och sen nöja sig med att testa ett värde
+                            ur varje grupp.</p>
+                        <p style="font-size: 20pt; line-height: 24pt; text-align: left;">Tanken är att om du förväntar dig samma resultat från två tester räcker
+                            det att köra en av dem. En grupp av tester är ekvivalenta om:</p>
+                        <ul>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">De testar samma sak</li>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Ett av dem hittar en avvikelse så gör troligen de andra det också</li>
+                            <li
+                            style="font-size: 20pt; line-height: 24pt; text-align: left;">Ett av dem inte hittar en avvikelse så gör inte heller de andra det</li>
+                        </ul>
+                        <p style="font-size: 20pt; line-height: 24pt; text-align: left;">Steget efter att du tagit fram grupperna innebär att du väljer värden
+                            på och runt gränserna för varje grupp.</p>
+                        <p style="font-size: 20pt; line-height: 24pt; text-align: left;">Rekommendationen för hur många värden du ska välja varierar beroende på
+                            vem du frågar, vanligt är två-tre värden per gräns.</p>
+                        <p style="font-size: 20pt; line-height: 24pt; text-align: left;">För numeriska intervall är det naturligt att hitta gränsvärden, för andra
+                            typer av grupper är det inte lika lätt – ofta saknas gränsvärden.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>exempelmall</h4>
+
+                        <p>
+                            <img class="" src="ekvivalensgrupper_mall.png" alt="" width="469" height="528">
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Beslutstabeller</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; line-height: 24pt;">Beprövat sätt att fånga <strong>systemkrav som består av logiska beroenden</strong> och
+                                att dokumentera ett systems interna uppbyggnad.</li>
+                            <li style="font-size: 20pt; line-height: 24pt;">Tabellerna kan användas för att dokumentera komplex affärslogik som ett
+                                system skall implementera.</li>
+                            <li style="font-size: 20pt; line-height: 24pt;">För att skapa beslutstabellerna analyseras specifikationerna så att systembeteenden
+                                och de villkor som påverkar dessa beteenden kan identifieras.</li>
+                            <li style="font-size: 20pt; line-height: 24pt;">Systembeteenden och de indatavillkor som påverkar dessa beteenden uttrycks
+                                ofta som <strong>sant eller falskt (Boolskt)</strong>.</li>
+                            <li style="font-size: 20pt; line-height: 24pt;">En beslutstabell <strong>innehåller de utlösande villkoren, ofta i kombination med sant och falsktvärden</strong> för
+                                all indata och tillsammans med den resulterande händelsen.</li>
+                            <li style="font-size: 20pt; line-height: 24pt;"><strong>Varje kolumn i tabellen motsvarar en regel i affärslogiken</strong> som
+                                beskriver vilken unik kombination av förhållanden som skall resultera i
+                                vilka händelser. Ofta beräknas täckningen genom att ha <strong>minst ett test per kolumn i tabellen</strong>,
+                                något som normalt innebär att alla kombinationer av utlösande villkor täcks.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Beslutstabell struktur</h4>
+
+                        <p>
+                            <img src="beslutstabell_struktur.png" width="700" height="326">&nbsp;</p>
+                        <p style="text-align: left; font-size: 20pt; line-height: 24pt;">Business rule 1 requires all conditions to be true to generate action
+                            1. Business rule 2 results in action 2 if condition 1 is false and condition
+                            2 is true but does not depend on condition 3. Business rule 3 requires
+                            conditions 1 and 2 to be true and condition 3 to be false.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Beslutstabell exempel</h4>
+
+                        <p style="text-align: left; font-size: 20pt; line-height: 24pt;">A supermarket has a loyalty scheme that is offered to all customers. Loyalty
+                            cardholders enjoy the benefits of either additional discounts on all purchases
+                            (rule 3) or the acquisition of loyalty points (rule 4), which can be converted
+                            into vouchers for the supermarket or to equivalent points in schemes run
+                            by partners. Customers without a loyalty card receive an additional discount
+                            only if they spend more than £100 on any one visit to the store (rule 2),
+                            otherwise only the special offers offered to all customers apply (rule
+                            1).</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>beslutstabell exempel</h4>
+
+                        <p>
+                            <img class="" src="beslutstabell_exempel.png" alt="" width="800" height="493">
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Tillståndsbaserad testning</h4>
+
+                        <p style="font-size: 24pt; text-align: left; line-height: 28pt;">Ett system kan visa olika svar eller resultat beroende på vilka villkor
+                            och vilket tidigare händelseförlopp (dess olika tillstånd) som skett.</p>
+                        <ul>
+                            <li style="font-size: 24pt; text-align: left; line-height: 28pt;">Tillståndsgrafer (eng state machines,state transition testing) är en modellbaserad
+                                teknik för att ta fram testfall.</li>
+                            <li style="font-size: 24pt; text-align: left; line-height: 28pt;">Den arbetar med händelsestyrda system, ofta i realtid och är vanlig inom
+                                bland annat digitalteknik och elektronik i hårdvara.</li>
+                            <li style="font-size: 24pt; text-align: left; line-height: 28pt;">Typiska användningsområden är radio, tv, tvättmaskin, diskmaskin och trafikljus.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Definitioner</h4>
+
+                        <ul>
+                            <li style="font-size: 24pt; text-align: left; line-height: 28pt;"><strong>Tillstånd</strong> - Specifika värden på de parametrar som definierar
+                                varje tillstånd</li>
+                            <li style="font-size: 24pt; text-align: left; line-height: 28pt;"><strong>Händelser</strong> - Vad kan hända?</li>
+                            <li style="font-size: 24pt; text-align: left; line-height: 28pt;"><strong>Tillståndsgraf</strong> - Tillstånd och hur de är länkade samman,
+                                innehåller oftast endast giltiga övergångar</li>
+                            <li style="font-size: 24pt; text-align: left; line-height: 28pt;"><strong>Tillståndstabell</strong> - Alla tillstånd och alla händelser i
+                                en matris</li>
+                            <li style="font-size: 24pt; text-align: left; line-height: 28pt;"><strong>Partitionering av data</strong> - Hur grupperar vi händelser, finns
+                                gränsvärden? Tid, samtidiga användare.</li>
+                            <li style="font-size: 24pt; text-align: left; line-height: 28pt;"><strong>Täckning</strong> - Metoder att täcka modellerna</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Exempel</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">A hill-walker’s watch has two modes: Time and Altimeter. In Time mode,
+                            pressing the Mode switch causes the watch to switch to Alt mode; pressing
+                            Mode again returns to Time mode. While the watch is in Alt mode the Set
+                            button has no effect.</p>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">When the watch is in Time mode pressing the Set button transitions the
+                            watch into Set Hrs, from which the Hrs display can be incremented by pressing
+                            the Set button. If the Mode switch is pressed while the watch is in Set
+                            Hrs mode the watch transitions to Set Mins mode, in which pressing the
+                            Set button increments the Mins display. If the Mode button is pressed in
+                            this mode the watch transitions back to Time mode.</p>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Note that not all events have an effect in all states. Where an event
+                            does not have an effect on a given state it is usually omitted, but it
+                            can be shown as an arrow starting from the state and returning to the same
+                            state to indicate that no transition takes place; this is sometimes known
+                            as a ‘null’ transition or an ‘invalid’ transition.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>exempel tillståndsgraf</h4>
+
+                        <p>
+                            <img class="" src="state_diagram.png" alt="" width="674" height="540">
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Exempel tillståndstabell</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Utifrån tillståndstabellen kan vi enkelt skapa upp de testfall som behövs
+                            för att trigga de olika händelserna.</p>
+                        <p>
+                            <img class="" src="state_table.png" alt="" width="689" height="337">
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Användningsfallsbaserad testning (1/2)</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Tester kan härledas från användningsfall. Ett användningsfall beskriver
+                                interaktionen mellan aktörer, användare eller system, vilket producerar
+                                ett resultat av värde för en systemanvändare eller en kund.</li>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Användningsfall kan beskrivas på en abstrakt nivå (teknikoberoende affärsflöden
+                                på affärsprocessnivå), eller på systemnivå (systemanvändningsfall på funktionalitetsnivå).</li>
+                            <li
+                            style="font-size: 20pt; line-height: 24pt; text-align: left;">Varje användningsfall har förvillkor som måste vara uppfyllda för att
+                                användningsfallet skall fungera.</li>
+                                <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Varje användningsfall avslutas med ett antal slutvillkor, vilka utgörs
+                                    av observerbara resultat och systemets sluttillstånd när användningsfallet
+                                    genomförts.</li>
+                                <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Det krävs också att systemet har ett avsett sluttillstånd när användarscenariot
+                                    är avslutat.</li>
+                                <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Ett användningsfall har ett huvudflöde, dvs. det mest troliga scenariot,
+                                    men kan även ha alternativa scenarion.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>ANVÄNDNINGSFALLSBASERAD TESTNING (2/2)</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Användningsfall beskriver “processflödet” genom ett system baserat på
+                                dess troliga användning, så testfall som härleds från användningsfall är
+                                mycket användbara för att hitta fel i processflödet i den verkliga användningen
+                                av systemet.</li>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Användningsfall är mycket användbara vid framtagning av acceptanstestfall
+                                då kunder eller användare deltar i testfallsframtagningen.</li>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">De hjälper också till att hitta integrationsfel som orsakas av interaktion
+                                mellan och påverkan av, olika komponenter, som man inte hittar då man testar
+                                programkomponenterna var för sig.</li>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Testdesign utifrån användningsfall kan kombineras med andra specifikationsbaserade
+                                tekniker för testdesign.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Övning ekvivalensgrupper</h4>
+
+                        <p style="text-align: left; font-size: 24pt; line-height: 28pt;">Testa en liten dialog för hantering av manuella utbetalningar. Uppgiften
+                            är att ta fram lämpliga ekvivalensgrupper och gränsvärden, både giltiga
+                            och ogiltiga, för följande fyra variabler:</p>
+                        <ul>
+                            <li style="text-align: left; font-size: 24pt; line-height: 28pt;">Efternamn:20 tecken, alfanumeriskt fält</li>
+                            <li style="text-align: left; font-size: 24pt; line-height: 28pt;">Utbetalningssätt: personkonto, bankkonto eller utbetalningskort</li>
+                            <li
+                            style="text-align: left; font-size: 24pt; line-height: 28pt;">Belopp: heltal, 9 tecken</li>
+                                <li style="text-align: left; font-size: 24pt; line-height: 28pt;">Skatt:0-100%</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Svar övning</h4>
+
+                        <p>
+                            <img src="facit.png" width="600" height="571">
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Övning beslutstabeller</h4>
+
+                        <p style="font-size: 20pt; line-height: 24pt; text-align: left;">Vi har ett system som hanterar sakförsäkring där man kan försäkra t.ex.
+                            sin bil • Den funktion som räknar ut självrisken för bilförsäkringen är
+                            ett objekt av lagom storlek för vårt exempel</p>
+                        <p style="font-size: 20pt; line-height: 24pt; text-align: left;">Regelverket för funktionen ser ut på följande sätt:</p>
+                        <ul>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">R0: Som utgångsläge är självrisken för samtliga kunder 500 kronor</li>
+                            <li
+                            style="font-size: 20pt; line-height: 24pt; text-align: left;">R1: Ogifta män under 25 års ålder har en ökad självrisk med 1500 kronor</li>
+                                <li
+                                style="font-size: 20pt; line-height: 24pt; text-align: left;">R2: Gifta män över 25 år och alla kvinnor över 25 år har 200 kronor i
+                                    minskad självrisk</li>
+                                    <li style="font-size: 20pt; line-height: 24pt; text-align: left;">R3: Samtliga personer mellan 45 och 65 har minskad självrisk med ytterligare
+                                        100 kronor</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Svar övning 2 (1/3)</h4>
+
+                        <p style="text-align: left;">Som ett delsteg är det lämpligt att gruppera värdena:</p>
+                        <p>
+                            <img class="" src="facit2a.png" alt="" width="419" height="278">&nbsp;</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>SVAR ÖVNING 2 (2/3)</h4>
+
+                        <p>Vi kan också ta fram ett beslutsträd.</p>
+                        <p>
+                            <img class="" src="beslutsträd.png" alt="" width="800" height="364">
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>SVAR ÖVNING 2 (3/3)</h4>
+
+                        <p>
+                            <img class="" src="facit2b.png" alt="" width="1060" height="400">
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Strukturbaserade tekniker</h3>
+
+                        <p style="font-size: 24pt; line-height: 28pt; text-align: left;">Strukturbaserarad testning/white-boxtestning är baserad på att man identifierar
+                            strukturen av programmet eller systemet vilket visas genom följande exempel.</p>
+                        <ul>
+                            <li style="font-size: 24pt; line-height: 28pt; text-align: left;"><strong>Komponentnivån</strong>: Strukturen i en programvarukomponent,
+                                dvs. kodsatser, beslut, kodgrenar eller till och med specifika exekveringsvägar.</li>
+                            <li
+                            style="font-size: 24pt; line-height: 28pt; text-align: left;"><strong>Integationsnivån</strong>: Strukturen kan vara ett anropsträd,
+                                dvs. ett diagram där modulanrop till andra moduler visas</li>
+                                <li style="font-size: 24pt; line-height: 28pt; text-align: left;"><strong>Systemnivån</strong>: Strukturen kan vara en menystruktur, affärsflöde
+                                    eller en websidas struktur.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Kodsatstestning och kodsatstäckning</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">I komponenttestning är kodsatstäckning den utvärdering (i procent) som
+                                visar hur många exekverbara satser som har exekverats av en svit av testfall.</li>
+                            <li
+                            style="font-size: 20pt; text-align: left; line-height: 24pt;">I kodsatstestning skapar man nya testfall för att exekvera specifika kodsatser,
+                                vilket normalt ökar satstäckningen.</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Kodsatstäckning är antalet kodsatser som berörs av de (designade eller
+                                    exekverade) testfallen dividerat med det totala antalet kodsatser i programvarukomponenten.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Övergripande Kodstruktur</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Endast exekverbara satser räknas. Kommentarer och tomma rader räknas inte
+                            som kodsatser. Nedan har vi en eller tre exekverbara kodsatser (beroende
+                            på om man väljer att räkna BEGIN och END)</p>
+                        <p style="font-family: 'courier new', courier, monospace; font-size: 16pt; text-align: left; line-height: 20pt;">1 &nbsp; &nbsp;Non-executable statements
+                            <br>2 &nbsp; &nbsp;BEGIN
+                            <br>3
+                            <br>4 &nbsp; &nbsp;Executable statements&nbsp;
+                            <br>5
+                            <br>6 &nbsp; &nbsp;END</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Sekvenser</h4>
+
+                        <p style="font-size: 20pt; line-height: 24pt; text-align: left;">Kodsatserna exekveras en i taget efter varandra. Nedan har vi tre exekverbara
+                            kodsatser som alla kan exekveras med ett testfall.</p>
+                        <div class="" style="width: 50%; float: left;">
+                            <p style="font-family: 'courier new', courier, monospace; font-size: 16pt; line-height: 20pt; text-align: left;">1 &nbsp; &nbsp;Read A
+                                <br>2 &nbsp; &nbsp;Read B
+                                <br>3 &nbsp; &nbsp;C = A + B</p>
+                        </div>
+                        <div class="" style="width: 50%; float: left;">
+                            <img class="" src="sequence.png" alt="" width="156" height="127">
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Villkor</h4>
+
+                        <p style="font-size: 20pt; line-height: 24pt; text-align: left;">Beroende på om ett villkor är SANT eller FALSKT tar vi olika vägar genom
+                            programmet. I fall ett nedan behöver vi två testfall för att få 100% kodsatstäckning,
+                            medan vi i fall två endast behöver ett testfall.</p>
+                        <div class="" style="width: 50%; float: left;">
+                            <p style="font-family: 'courier new', courier, monospace; font-size: 16pt; text-align: left; line-height: 20pt;">1 &nbsp; &nbsp;IF P &gt; 3
+                                <br>2 &nbsp; &nbsp;THEN
+                                <br>3 &nbsp; &nbsp; &nbsp; &nbsp;X = X + Y
+                                <br>4 &nbsp; &nbsp;ELSE
+                                <br>5 &nbsp; &nbsp; &nbsp; &nbsp;X = X - Y
+                                <br>6 &nbsp; &nbsp;ENDIF</p>
+                            <p style="font-family: 'courier new', courier, monospace; font-size: 16pt; text-align: left; line-height: 20pt;">&nbsp;</p>
+                            <p style="font-family: 'courier new', courier, monospace; font-size: 16pt; text-align: left; line-height: 20pt;">1 &nbsp; &nbsp;IF P &gt; 3
+                                <br>2 &nbsp; &nbsp;THEN
+                                <br>3 &nbsp; &nbsp; &nbsp; &nbsp;X = X + Y
+                                <br>4 &nbsp; &nbsp;ENDIF</p>
+                        </div>
+                        <div class="" style="width: 50%; float: left;">
+                            <img class="" src="selection.png" alt="" width="201" height="191">
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Iterationer</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">För iterationer, även kallade loopar, krävs bara ett testfall för full
+                            kodsatstäckning. Exempel: DO WHILE.., REPEAT..UNTIL</p>
+                        <div class="" style="width: 50%; float: left;">
+                            <p style="font-family: 'courier new', courier, monospace; font-size: 16pt; text-align: left; line-height: 20pt;">1 &nbsp; &nbsp;X = 15
+                                <br>2 &nbsp; &nbsp;Count = 0
+                                <br>3 &nbsp; &nbsp;WHILE X &lt; 20 DO
+                                <br>4 &nbsp; &nbsp; &nbsp; &nbsp;X = X + 1
+                                <br>5 &nbsp; &nbsp; &nbsp; &nbsp;Count = Count + 1
+                                <br>6 &nbsp; &nbsp;END DO</p>
+                            <p style="font-family: 'courier new', courier, monospace; font-size: 16pt; text-align: left; line-height: 20pt;">1 &nbsp; &nbsp;X = 15
+                                <br>2 &nbsp; &nbsp;Count = 0
+                                <br>3 &nbsp; &nbsp;REPEAT
+                                <br>4 &nbsp; &nbsp; &nbsp; &nbsp;X = X + 1
+                                <br>5 &nbsp; &nbsp; &nbsp; &nbsp;Count = Count + 1
+                                <br>6 &nbsp; &nbsp;UNTIL X = 20</p>
+                        </div>
+                        <div class="" style="width: 50%; float: left;">
+                            <img class="" src="iterations.png" alt="" width="237" height="233">
+                        </div>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">&nbsp;</p>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">&nbsp;</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Beslutstestning och beslutstäckning</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Beslutstäckning, nära relaterat till bågtestning, är utvärderingen (i
+                                procent) av antalet beslutsutfall (t.ex. utfallen sant respektive falskt
+                                för en IF-sats) som har exekverats av en testfallssvit.</li>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Vid beslutstestning skapas testfall som ska exekvera utpekade beslutsutfall.
+                                Man kan representera en programvarukod med hjälp av en graf med bågar och
+                                noder. En nod med flera utgående bågar som beskriver överföring av kontroll
+                                till olika platser i koden representerar en beslutspunkt.</li>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Beslutstäckning är antalet beslutsutfall som berörs av de (designade eller
+                                exekverade) testfallen dividerat med det totala antalet beslutsutfall som
+                                finns i programvarukomponenten.</li>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Beslutstestning är en form av kontrollflödestestning där ett specifikt
+                                kontrollflöde exekveras genom att en specifik exekveringsväg tas genom
+                                beslutspunkterma.</li>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Beslutstäckning är starkare än kodsatstäckning, eftersom 100% beslutstäckning
+                                garanterar 100% kodsatstäckning, men inte tvärtom.&nbsp;</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Control flow graph</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">För att beräkna beslutstäckningen kan vi använda oss av en förenklad flödesgraf
+                            som enbart visar villkoren. För att få full beslutstäckning måste vi ta
+                            alla vägar, oavsett om dessa innehåller några exekverbara satser eller
+                            inte.</p>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">
+                            <img class="" style="display: block; margin-left: auto; margin-right: auto;"
+                            src="control_flow.png" alt="" width="800" height="313">
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Exempel</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">För att beräkna både kodsatstäckning och beslutstäckning kan vi använda
+                            oss av en hybridgraf med extra noder för exekverbara kodsatser. I det här
+                            fallet krävs bara ett testfall för kodsatstäckning, men två testfall för
+                            beslutstäckning.</p>
+                        <div class="" style="width: 50%; float: left;">
+                            <p style="font-family: 'courier new', courier, monospace; font-size: 16pt; line-height: 20pt; text-align: left;">1 &nbsp; &nbsp;Program Coverage Example
+                                <br>2 &nbsp; &nbsp;A, X: Integer
+                                <br>3 &nbsp; &nbsp;Begin
+                                <br>4 &nbsp; &nbsp; &nbsp; &nbsp;Read A
+                                <br>5 &nbsp; &nbsp; &nbsp; &nbsp;Read X
+                                <br>6 &nbsp; &nbsp; &nbsp; &nbsp;If A &gt; 1 AND X = 2
+                                <br>7 &nbsp; &nbsp; &nbsp; &nbsp;Then
+                                <br>8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;X = X/A
+                                <br>9 &nbsp; &nbsp; &nbsp; &nbsp;Endif
+                                <br>10 &nbsp; &nbsp; &nbsp; If A = 2 OR X = 2
+                                <br>11 &nbsp; &nbsp; &nbsp; Then
+                                <br>12 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; X = X + 1
+                                <br>13 &nbsp; &nbsp; &nbsp; Endif
+                                <br>14 &nbsp; End</p>
+                        </div>
+                        <div class="" style="width: 50%; float: left;">
+                            <img src="exempel1.png" width="200" height="395">
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Andra strukturbaserade tekniker</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Utöver beslutstäcking finns andra kodtäckningsmått, t.ex. villkorstäckning
+                                och villkorskombinationstäckning.</li>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">Kodtäckningskonceptet kan också användas på andra testnivåer, t.ex. på
+                                integrationsnivån, där procenten av moduler, komponenter eller klasser
+                                som har blivit exekverade av en testfallssvit kan uttryckas som modul-,
+                                komponent- eller klasstäckning.</li>
+                            <li style="font-size: 20pt; line-height: 24pt; text-align: left;">För strukturbaserad testning av kod är verktygsstöd användbart.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Övning</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Hur många testfall krävs för kodsatstäckning respektive beslutstäckning
+                            för följande program:</p>
+                        <p style="font-family: 'courier new', courier, monospace; font-size: 12pt; text-align: left; line-height: 16pt;">1 &nbsp; &nbsp;<strong>Program</strong> BestInterest
+                            <br>2 &nbsp; &nbsp;Interest, Base Rate, Balance: Real
+                            <br>3
+                            <br>4 &nbsp; &nbsp;<strong>Begin</strong> 
+                            <br>5 &nbsp; &nbsp;Base Rate = 0.035
+                            <br>6 &nbsp; &nbsp;Interest = Base Rate
+                            <br>7
+                            <br>8 &nbsp; &nbsp;Read (Balance)
+                            <br>9 &nbsp; &nbsp;<strong>If</strong> Balance &gt; 1000
+                            <br>10 &nbsp; <strong>Then</strong> 
+                            <br>11 &nbsp; &nbsp; &nbsp; Interest = Interest + 0.005
+                            <br>12 &nbsp; &nbsp; &nbsp; <strong>If</strong> Balance &lt; 10000
+                            <br>13 &nbsp; &nbsp; &nbsp; <strong>Then</strong> 
+                            <br>14 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Interest = Interest + 0.005
+                            <br>15 &nbsp; &nbsp; &nbsp; <strong>Else</strong> 
+                            <br>16 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Interest = Interest + 0.010
+                            <br>17 &nbsp; &nbsp; &nbsp; <strong>Endif</strong> 
+                            <br>18 &nbsp; <strong>Endif</strong> 
+                            <br>19
+                            <br>20 &nbsp; Balance = Balance × (1 + Interest)
+                            <br>21
+                            <br>22 &nbsp; <strong>End</strong>
+
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Svar övning</h4>
+
+                        <p style="font-size: 20pt; line-height: 24pt; text-align: left;">För kodsatstäckning krävs två testfall, och för beslutstäckning krävs
+                            tre testfall.</p>
+                        <p style="font-size: 20pt; line-height: 24pt; text-align: left;">
+                            <img style="display: block; margin-left: auto; margin-right: auto;" src="exercise1.png"
+                            width="280" height="338">
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Övning 2</h4>
+
+                        <p style="font-size: 20pt; line-height: 24pt; text-align: left;">Hur många testfall krävs för kodsatstäckning respektive beslutstäckning
+                            för följande program</p>
+                        <p style="font-family: 'courier new', courier, monospace; font-size: 12pt; line-height: 16pt; text-align: left;">1 &nbsp; &nbsp;<strong>Program</strong> Check
+                            <br>2
+                            <br>3 &nbsp; &nbsp;Count, Sum, Index: Integer
+                            <br>4
+                            <br>5 &nbsp; &nbsp;<strong>Begin</strong> 
+                            <br>6
+                            <br>7 &nbsp; &nbsp;Index = 0
+                            <br>8 &nbsp; &nbsp;Sum = 0
+                            <br>9 &nbsp; &nbsp;Read (Count)
+                            <br>10 &nbsp; Read (New)
+                            <br>11
+                            <br>12 &nbsp; <strong>While</strong> Index &lt;= Count
+                            <br>13 &nbsp; <strong>Do</strong> 
+                            <br>14 &nbsp; &nbsp; &nbsp; <strong>If</strong> New &lt; 0
+                            <br>15 &nbsp; &nbsp; &nbsp; <strong>Then</strong> 
+                            <br>16 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Sum = Sum + 1
+                            <br>17 &nbsp; &nbsp; &nbsp; <strong>Endif</strong> 
+                            <br>18 &nbsp; &nbsp; &nbsp; Index = Index + 1
+                            <br>19 &nbsp; &nbsp; &nbsp; Read (New)
+                            <br>20 &nbsp; <strong>Enddo</strong> 
+                            <br>21
+                            <br>22 &nbsp; Print (“There were”, Sum, “negative numbers in the input stream”)
+                            <br>23
+                            <br>24 &nbsp; <strong>End</strong>
+
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Svar övning 2</h4>
+
+                        <p style="text-align: left;">Med rätt indata räcker det med ett testfall för att uppnå både kodsatstäckning
+                            och beslutstäckning, t.ex. sätt Count=1 och New=1 initialt och sätt sedan
+                            New=-1 inne i loopen.</p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Erfarenhetsbaserade tekniker</h3>
+
+                        <p style="font-size: 24pt; text-align: left; line-height: 28pt;">Erfarenhetsbaserad testning är när tester skapas baserat på testarens
+                            skicklighet och intuition och hans/hennes erfarenhet av liknande applikationer
+                            och teknologier. Som komplement till mer systematiska testtekniker, kan
+                            dessa tekniker vara mycket värdefulla genom att testfall identifieras,
+                            vilka annars inte skulle hittas via de mer formella teknikerna. Dock varierar
+                            effektiviteten hos denna typ av testning med erfarenheten hos testaren.</p>
+                        <p
+                        style="font-size: 24pt; text-align: left; line-height: 28pt;">Vanligt förekommande erfarenhetsbaserade tekniker är <strong>felgissning</strong> och <strong>utforskande testning</strong>.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Felgissning</h4>
+
+                        <p style="font-size: 24pt; text-align: left; line-height: 28pt;">En vanligt förekommande erfarenhetsbaserad teknik är felgissning, i vilken
+                            testare förutspår potentiella defekter utifrån sin tidigare erfarenhet.
+                            Ett strukturerat sätt att arbeta med felgissning är att göra en <strong>lista av möjliga defekter och därefter skriva tester som blottar dessa defekter</strong>.
+                            Detta systematiska angreppssätt kallas för <strong>felattack</strong>. Dessa
+                            listor på defekter och felsymptom kan byggas upp baserat på erfarenhet,
+                            tillgängliga fel eller felsymptombeskrivningar samt från grundläggande
+                            kunskap om varför program fallerar.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Utforskande testning</h4>
+
+                        <p style="font-size: 24pt; line-height: 28pt; text-align: left;">Utforskande testing är en teknik som bygger på <strong>samtidig testdesign, testexekvering, testloggning och inlärning</strong>.
+                            Den baseras på ett test charter som innehåller testmål och utförs inom
+                            väldefinierade tidsgränser. Strategin är mest a<strong>nvändbar när det är få eller inte tillräckliga specifikationer och en extrem tidspress</strong>,
+                            samt som stöd eller <strong>komplement till annan, mer formell testning</strong>.
+                            Tekniken <strong>kan tjäna som en kontroll av testprocessen</strong> för
+                            att försäkra sig om att de mest allvarliga felen hittas.</p>
+                    </section>
+                </section>
+                <section data-background-color="#ffffff" data-background-image="iths.png"
+                data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                     <h4>Välja testtekniker</h4>
+
+                    <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Val av testtekniker som skall användas beror på ett antal faktorer som,
+                        typ av system, lagar, föreskrifter och standarder, kundkrav eller kontrakt,
+                        nivå av risk, typ av risk, testdomän, testmål, tillgänglig dokumentation,
+                        kunskap hos testarna, tid och budget, utvecklingslivscykel, andvändningsfallsmodeller
+                        och tidigare erfarenhet av olika typer av defekter som man hittat.</p>
+                    <p
+                    style="font-size: 20pt; text-align: left; line-height: 24pt;">Vissa tekniker är mer användbara vid vissa situationer än andra och vissa
+                        tekniker är mest användbara på en testnivå, medan andra kan användas på
+                        alla testnivåer.</p>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Under testfallsdesign använder sig testare vanligtvis av en kombination
+                            av testtekniker inklusive process-, regelverks- och datadrivna tekniker,
+                            för att säkerställa tillräcklig testtäckning av objektet som testas.</p>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>quiz</h3>
+
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                        <iframe title="iframe example 1" src="http://www.bluebottle.se/courses/iths/quizpage.html?quiz=3&amp;questions=12"
+                        width="800" height="600"></iframe>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                        <iframe title="iframe example 1" src="http://www.bluebottle.se/courses/iths/chartpage.html?quiz=3&amp;refresh=5"
+                        width="800" height="460"></iframe>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script>
+            Reveal.initialize({"zoomKey":"ctrl","pdfMaxPagesPerSlide":1,"autoPlayMedia":"null",
+            dependencies: [
+            {src: "plugin/notes/notes.js", async: true},
+            {src: "plugin/highlight/highlight.js", async: true, callback: function() {hljs.initHighlightingOnLoad();}},
+            {src: "plugin/zoom-js/zoom.js", async: true},
+            {src: "plugin/search/search.js", async: true},
+            {src: "plugin/katex/katex.js", async: true},
+            {src: "plugin/chart/Chart.min.js"},
+            {src: "plugin/chart/csv2chart.js"}]
+            });
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,544 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title></title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/print/paper.css" id="pdf">
+        <link rel="stylesheet" href="css/unreel.css">
+    </head>
+    
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                     <h2>Testning genom programvarans livscykel</h2>
+
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Utvecklingsmodeller för programvara</h3>
+
+                        <ul>
+                            <li style="text-align: left; font-size: 24pt; line-height: 28pt;">Testning existerar inte isolerat; testaktiviteterna är kopplade till utvecklingsaktiviteterna
+                                av programvaran.</li>
+                            <li style="text-align: left; font-size: 24pt; line-height: 28pt;">Olika livscykelmodeller för utvecklingen kräver olika angreppssätt för
+                                testningen</li>
+                            <li style="text-align: left; font-size: 24pt; line-height: 28pt;">Sekventiella metoder (vattenfallsmetoden, V-modellen)</li>
+                            <li style="text-align: left; font-size: 24pt; line-height: 28pt;">Inkrementella metoder (DSDM, RUP, Agil utveckling)</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Utvecklingsmodeller för programvara</h4>
+
+                        <div class="" style="width: 100%; float: left;">
+                            <img src="vattenfallsmetoden.jpg" width="200" height="191">
+                            <img src="vmodel.png" width="200" height="156">
+                            <img src="dsdm2.png" width="200" height="157">
+                            <img src="agile_development_process.png" width="200" height="117">
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Vattenfallsmodellen</h4>
+
+                        <div class="" style="width: 50%; float: left;">
+                            <img src="vattenfallsmetoden.jpg" width="400" height="379">
+                        </div>
+                        <div class="" style="width: 50%; float: left; text-align: left;">
+                            <p style="font-size: 24pt; line-height: 28pt;">Sekventiell systemutvecklings- process där man ser framstegen som ett
+                                flöde (som ett vattenfall) nedåt genom olika faser</p>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>V-modellen</h4>
+
+                        <div class="" style="width: 50%; float: left;">
+                            <img src="vmodel.png" width="400" height="312">
+                        </div>
+                        <div class="" style="width: 50%; float: left;">
+                            <p style="font-size: 16pt; line-height: 20pt; text-align: left;">V-modell (Sekventiell systemutvecklingsprocess ) har fler, färre, eller
+                                andra nivåer av utveckling och testning, beroende på projektet och programvaruprodukten.
+                                Programvarans arbetsprodukter (t.ex. verksamhetsscenarier eller användningsfall,
+                                kravspecifikationer, konstruktionsdokument eller kod) som har producerats
+                                under utvecklingen utgör oftast basen för testningen på en eller flera
+                                nivåer.</p>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>V-modellen</h4>
+
+                        <div class="" style="width: 50%; float: left;">
+                            <img src="vmodel.png" width="400" height="312">
+                        </div>
+                        <div class="" style="width: 50%; float: left;">
+                            <ul>
+                                <li style="font-size: 12pt; line-height: 16pt; text-align: left;"><strong>Kravspecifikation</strong> - här ställs högnivåkrav. Mot dessa
+                                    testas acceptanstester som helt eller delvis kan göras av kunden/mottagaren.
+                                    Målet med detta test är att få förtroende för produkten.</li>
+                                <li style="font-size: 12pt; line-height: 16pt; text-align: left;"><strong>Funktionsspecifikation</strong> - här ställs mer detaljerade krav
+                                    på funktionalitet. Mot dessa testas systemtester. Test/Granskning av protokoll,
+                                    databasers innehåll och integritet bör också utföras.</li>
+                                <li style="font-size: 12pt; line-height: 16pt; text-align: left;"><strong>Designspecifikation</strong> - konkreta specifikationer på hur
+                                    systemet skall designas utförs. Mot dessa krav kan integrationstesterutföras.
+                                    Mål här är att se att komponenter kan samverka.</li>
+                                <li style="font-size: 12pt; line-height: 16pt; text-align: left;"><strong>Komponentspecifikation</strong> - detaljer i hur komponenter skall
+                                    implementeras specificeras. Testas mot komponenttester(UnitTest, enhetstest).
+                                    Dessa komponenttester kan med fördel automatiseras</li>
+                                <li style="font-size: 12pt; line-height: 16pt; text-align: left;"><strong>Utveckling</strong> - Längst ner i V-modellen lägger man ibland
+                                    själva programmeringen -att utföra arbete mot komponentspecifikationer.
+                                    Under tiden kan man testa mot komponenttester.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Iterativ-inkrementell utveckling</h4>
+
+                        <div class="" style="width: 50%; float: left;">
+                            <img class="" src="dsdm2.png" alt="" width="400" height="314">
+                        </div>
+                        <div class="" style="width: 50%; float: left;">
+                            <p style="font-size: 14pt; text-align: left; line-height: 18pt;">Iterativ -inkrementell utveckling är benämning på den process, med upprättande
+                                av krav, konstruktion, byggande och testning av ett system, som sker i
+                                många små utvecklingssteg. Exempel på detta är: Rapid ApplicationDevelopment(RAD),
+                                Rationals utvecklingsprocess (RUP), Dynamic Systems Development Methodology(DSDM)
+                                <br>
+                                <br>System som produceras med hjälp av dessa modeller kan testas på flera
+                                testnivåer i varje iteration. Ett inkrement adderat till andra tidigare
+                                utvecklade inkrement, skapar ett funktionellt växande system, vilket också
+                                skall testas.</p>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Agil utveckling</h4>
+
+                        <div class="" style="width: 50%; float: left;">
+                            <img class="" src="agile_development_process.png" alt="" width="400" height="233">
+                        </div>
+                        <div class="" style="width: 50%; float: left;">
+                            <p style="font-size: 14pt; text-align: left; line-height: 18pt;">Samlingsnamn för ett antal systemutvecklingsmetoder som kan användas vid
+                                programvaruutveckling, även kalladelättrörliga metoderelleriterativa metoder.
+                                Ex: Kanban, Scrum, XP, LeanSoftware Development
+                                <br>
+                                <br>Metoderna följer den filosofi och de principer som formulerades i Manifestet
+                                för Agil systemutveckling: <a href="http://agilemanifesto.org/iso/sv/manifesto.html"
+                                target="_blank" rel="noopener noreferrer">http://agilemanifesto.org/iso/sv/manifesto.html</a>&nbsp;&nbsp;
+                                <br>
+                                <br><strong>Individer och interaktioner</strong> framför processer och verktyg
+                                <br><strong>Fungerande programvara</strong> framför omfattande dokumentation
+                                <br><strong>Kundsamarbete</strong> framför kontraktsförhandling
+                                <br><strong>Anpassning till förändring</strong> framför att följa en plan</p>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Testning inom en livscykelmodell</h4>
+
+                        <p style="text-align: left; font-size: 16pt; line-height: 20pt;">I varje livscykelmodell finns det flera egenskaper som kännetecknar bra
+                            testning:</p>
+                        <ul>
+                            <li style="text-align: left; font-size: 16pt; line-height: 20pt;">För varje utvecklingsaktivitet finns det en motsvarande testaktivitet.</li>
+                            <li
+                            style="text-align: left; font-size: 16pt; line-height: 20pt;">Varje testnivå har en målsättning speciellt inriktad för denna nivå.</li>
+                                <li
+                                style="text-align: left; font-size: 16pt; line-height: 20pt;">Analys och konstruktion av tester för en bestämd testnivå skall starta
+                                    under motsvarande utvecklingsaktivitet.</li>
+                                    <li style="text-align: left; font-size: 16pt; line-height: 20pt;">Testarna skall medverka i granskning av dokument så fort som utkast finns
+                                        tillgängliga under utvecklingens livscykel.</li>
+                        </ul>
+                        <p style="text-align: left; font-size: 16pt; line-height: 20pt;">Beroende på karaktären hos projektet eller hos systemarkitekturen kan
+                            testnivåer kombineras och organiseras om.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Övning</h4>
+
+                        <p style="text-align: left;">Förklara förhållandet mellan utveckling, testaktiviteter och arbetsprodukter
+                            i utvecklingens livscykel genom att ge exempel byggda på produkten och
+                            projektet</p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Testnivåer</h3>
+
+                        <div class="" style="width: 50%; float: left; text-align: left;">
+                            <p style="font-size: 16pt; text-align: left; line-height: 20pt;">För varje testnivå kan följande identifieras:</p>
+                            <ul>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Testobjekt (det som skall testas): typiska fel som kommer att hittas,
+                                    krav på testexekveringsplattform, verktygsstöd, specifika angreppssätt
+                                    och ansvar.</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Testbas (det som vi skall testa mot): Dess generiska målsättning, arbetsprodukt(er)
+                                    som refereras till för att ta fram testfall</li>
+                            </ul>
+                            <p style="font-size: 16pt; text-align: left; line-height: 20pt;">Hänsyn skall även tas till testsystemets konfigurationsdata, eftersom
+                                konfigurationsdata är en del av systemet.</p>
+                        </div>
+                        <div class="" style="width: 50%; float: left;"><span style="font-size: 16pt;"> <br> <img class="" style="float: left;" src="testlevels.jpg" alt="" width="400" height="239"></span>
+
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Testnivå1: Komponenttestning</h4>
+
+                        <div class="" style="width: 50%; float: left;">
+                            <img class="" src="sadel.png" alt="" width="300" height="175">
+                            <br>
+                            <img class="" src="trampa.png" alt="" width="300" height="171">
+                        </div>
+                        <div class="" style="width: 50%; float: left;">
+                            <p style="font-size: 16pt; text-align: left; line-height: 20pt;"><strong>Testobjekt:</strong> Komponenter, program, datakonverterings-/migreringsprogram,
+                                databasmoduler.
+                                <br> <strong>Testbas:</strong> Komponentkrav, detaljeraddesign, kod.</p>
+                            <ul>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Utvecklarens ansvar</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Automatiserade tester</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Test på minsta möjliga komponent</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Testa så oberoende av ”omvärlden som möjligt”</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Test driven utveckling</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Kodgranskning</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Statiska och dynamiska tester</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Test sker i utvecklingsmiljön</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Testnivå 2: Integrationstestning</h4>
+
+                        <div class="" style="width: 40%; float: left;">
+                            <img class="" src="integrationstestning.png" alt="" width="300" height="506">
+                        </div>
+                        <div class="" style="width: 60%; float: left;">
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;"><strong>Testobjekt:</strong> Delsystem, databasimplementation, infrastruktur,
+                                systemkonfiguration, gränssnitt och konfigurationsdata.
+                                <br> <strong>Testbas:</strong> Programvaru- och systemdesign, arkitektur, arbetsflöden,
+                                användningsfall.
+                                <br>
+                                <br>Integrationstestning testar gränssnitt mellan komponenter, samspelet
+                                mellan olika delar i ett system, t.ex. operativsystem, filsystem, maskinvara
+                                eller gränssnittet mellan system.</p>
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;">Det kan finnas mer än en nivå av integrationstestning och den kan utföras
+                                på testobjekt av varierande storlek, till exempel: (i) testar samspelet
+                                mellan programvarukomponenter och görs efter komponenttestning, (ii) testar
+                                samspelet mellan olika system eller mellan hårdvara, programvara och kan
+                                göras efter systemtest. I det senare fallet kan utvecklingsorganisationen
+                                bara kontrollera ena sidan av samspelet så ändringar kan kanske vara
+                                destabiliserande</p>
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;">Test av icke-funktionella egenskaper(t.ex. prestanda) kan inkluderas i
+                                integrationstestningen.</p>
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;">Vid varje integrationssteg skall testarna koncentrera sig enbart på själva
+                                integrationen dvs. gränssnitten. Vid till exempel integration av modul
+                                A med modul B skall de fokusera på kommunikationen mellan modulerna och
+                                inte funktionaliteten i de individuella modulerna, som gjordes i komponenttest.</p>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Testnivå3: Systemtestning</h4>
+
+                        <div class="" style="width: 30%; float: left;">
+                            <img class="" src="systemtestning.png" alt="" width="300" height="528">
+                        </div>
+                        <div class="" style="width: 70%; float: left;">
+                            <p style="font-size: 12pt; text-align: left; line-height: 16pt;"><strong>Testobjekt:</strong> Systemet, manualer, systemkonfiguration och
+                                konfigurationsdata.
+                                <br><strong>Testbas:</strong> Kravspecifikation för system och programvara,
+                                funktionsspecifikation, riskanalys.</p>
+                            <ul>
+                                <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Systemtestning täcker hela systemets/produktens beteende. Testningens
+                                    omfattning skall vara tydligt beskriven i den övergripande testplanen
+                                    (master test plan) eller i testplanen för aktuell nivå.</li>
+                                <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Testmiljön skall, för systemtest, efterlikna den slutliga mål-eller
+                                    produktionsmiljön så mycket som möjligt för att minimera risken för
+                                    att fel kopplade till miljön inte hittas under testningen.</li>
+                                <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Systemtest kan omfatta testning baserat på risker och/eller kravspecifikationer,
+                                    verksamhetsprocesser eller användningsfall. Den kan också baseras på
+                                    andra högnivåbeskrivningar av systemets beteende eller samverkan med
+                                    operativsystem och systemresurser.</li>
+                                <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Systemtest kan undersöka funktionella och icke-funktionella krav på
+                                    systemet samt datakvalitetsegenskaper.</li>
+                                <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Krav kan finnas i textform och/eller modeller.</li>
+                                <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Testare skall också kunna hantera ofullständiga och odokumenterade krav.</li>
+                                <li
+                                style="font-size: 12pt; text-align: left; line-height: 16pt;">Systemtestning av funktionella krav startar med att använda mest lämpliga
+                                    specifikationsbaserade (black-box) tekniker för att testa den funktionella
+                                    aspekten på systemet. En beslutstabell kan till exempel skapas, innehållande
+                                    kombinationer av effekter som beskrivs i verksamhetsreglerna.</li>
+                                    <li style="font-size: 12pt; text-align: left; line-height: 16pt;">Strukturbaserade tekniker(white-box) kan sedan användas för att utvärdera
+                                        grundligheten i testningen med avseende på ett strukturellt element som
+                                        t.ex. strukturen hos en meny eller navigeringen av en websida</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Testnivå4: Acceptanstestning</h4>
+
+                        <div class="" style="width: 40%; float: left;">
+                            <img src="acceptanstestning.png" width="250" height="470">
+                        </div>
+                        <div class="" style="width: 60%; float: left;">
+                            <p style="font-size: 16pt; text-align: left; line-height: 20pt;"><strong>Testobjekt:</strong> Affärsprocesser för helt integrerade system,
+                                drift-och underhållsprocesser, användarförfaranden, formulär, rapporter,
+                                konfigurationer och konfigurationsdata.
+                                <br> <strong>Testbas:</strong> Användarkrav, systemkrav, användningsfall,
+                                affärsprocesser, riskanalys.</p>
+                            <ul>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Oftast är det kunderna eller andvändarna som har ansvar för acceptanstestning,
+                                    men även andra intressenter kan vara inblandade.</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Målet för acceptanstestning är att skapa en tilltro till systemet,
+                                    till delar av det, eller till specifika icke-funktionella egenskaper av
+                                    systemet.</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Att hitta fel är inte det viktigaste målet i acceptanstestning.</li>
+                                <li
+                                style="font-size: 16pt; text-align: left; line-height: 20pt;">Acceptanstestning kan utvärderasystemets status inför driftsättning
+                                    och användning.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Olika typer av acceptanstester</h4>
+
+                        <ol>
+                            <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Acceptanstest i driftsmiljö (Site acceptancetest och Factory acceptancetest).
+                                Ett acceptanstest som utförs av (slut)kund i deras miljö alternativs hos
+                                leverantör av systemet. Typiskt testas högnivåkrav. Kan utföras av leverantör
+                                eller med kund närvarande.</li>
+                            <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Användaracceptanstester. Tester till tilltänkta användare kör systemet.</li>
+                            <li
+                            style="font-size: 16pt; text-align: left; line-height: 20pt;">Fälttester (alfa- och betatester). Tester där användare kör systemet i
+                                sin miljö.</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Operational Acceptance Testing: tester utförda av systemadministratörer
+                                    - backup-hantering, kraschåterhämtning, användarhantering, säkerhetskontroller,
+                                    etc.</li>
+                        </ol>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Övning</h4>
+
+                        <p style="text-align: left;">Jämföra olika nivåer på testning: viktiga målsättningar, typiska testobjekt,
+                            typisk inriktning (t.ex. funktionell eller strukturell) och relaterade
+                            arbetsprodukter, personer som testar, typ av fel och felsymptom som hittas.</p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>testtyper</h3>
+
+                        <ul>
+                            <li>Test av en <strong>funktion</strong> hos programvaran</li>
+                            <li>Test av en <strong>icke-funktionell&nbsp;</strong>kvalitetsegenskap som
+                                prestanda eller användbarhet</li>
+                            <li><strong>Struktur eller arkitektur</strong> hos komponent, programvara eller
+                                system.</li>
+                            <li>Test kopplad till <strong>ändringar</strong>, dvs. bekräfta att ett fel
+                                har åtgärdats (<strong>omtestning</strong>) och visar om oavsiktliga
+                                förändringar har uppstått (<strong>regressionstestning</strong>)</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Funktionell testing 1(2)</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">De funktioner som ett system, delsystem eller komponent skall utföra
+                                kan beskrivas i arbetsprodukter såsom kravspecifikation, användningsfall,
+                                en funktionsspecifikation, eller de kan vara odokumenterade. Funktioner
+                                visar <strong>”vad”</strong> systemet gör</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Funktionella tester är baserade på <strong>funktioner</strong> och finesser
+                                (beskrivna i dokument eller förstådda av testarna) och kan utföras på
+                                alla testnivåer (t.ex. kan testning av komponenter vara baserade på en
+                                komponentspecifikation)</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Specifikationsbaserade tekniker kan användas för att ta fram test villkor
+                                och testfall för programvarans eller systemets funktionalitet. Testning
+                                av funktionalitet behandlar det externa beteendet hos programvaran <strong>(black-box testing)</strong>
+
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Funktionelltesting 2(2)</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">En typ av funktionell testning, säkerhetstestning, undersöker de funktioner
+                                (t.ex. en brandvägg) som är relaterade till upptäckande av hot, t.ex. virus,
+                                från utomstående med uppsåt att skada.</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">En annan typ av funktionell testning, interoperatibilitetstestning, utvärderar
+                                programvarans förmåga att interagera med en eller flera andra specificerade
+                                komponenter eller system.</li>
+                        </ul>
+                        <img class="" src="cucumber.png" alt="" width="508" height="273" align="right">
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Icke-funktionelltestning</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Icke-funktionell testning inkluderar (men är inte begränsat) till testning
+                                av prestanda, last, användbarhet, underhållbarhet, tillförlitlighet
+                                och portabilitet. Det kan ses som testning av <strong>”hur” systemet fungerar</strong>.</li>
+                            <li
+                            style="font-size: 20pt; text-align: left; line-height: 24pt;">Icke-funktionell testning kan förekomma på alla test nivåer. Termen
+                                icke-funktionell testning beskriver de tester som krävs för att mäta
+                                egenskaperna hos ett system eller en programvara och som kan kvantifieras
+                                på en varierande skala, t.ex. svarstider vid prestandatestning.</li>
+                                <li
+                                style="font-size: 20pt; text-align: left; line-height: 24pt;">Fokuserar på systemets externa beteende och oftast används black-box testning</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                        <img class="" src="furbs.gif" alt="" width="620" height="592">
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                        <img class="" src="usabilitytesting.png" alt="" width="866" height="373">
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                        <img class="" src="lasttest.png" alt="" width="835" height="424">
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Testning vid ändringar</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">När ett fel har upptäckts och åtgärdats skall programvaran omtestas för
+                                att bekräfta att urspungsfelet verkligen har försvunnit. Detta kallas <strong>Omtestning</strong>.</li>
+                            <li
+                            style="font-size: 20pt; text-align: left; line-height: 24pt;">Avlusning (lokalisering och åtgärdande av fel) är en aktivitet för utvecklingen,
+                                inte testningen.</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;"><strong>Regressionstestning</strong> är en upprepad test av ett tidigare
+                                    testat program eller system, efter en ändring, för att upptäcka fel som
+                                    introducerats eller gjorts synliga som en bieffekt av ändringarna.</li>
+                                <li
+                                style="font-size: 20pt; text-align: left; line-height: 24pt;">Dessa fel kan antingen finnas i den programvara som testas, eller i en
+                                    annan beroende eller oberoende programvarukomponent.</li>
+                                    <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Regressionstestning utförs när programvaran eller dess miljö har förändrats.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                        <img class="" src="jenkins.png" alt="" width="900" height="428">
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Strukturell testning</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Strukturell <strong>(white-box)</strong> testning kan utföras på <strong>alla testnivåer</strong>.
+                                Strukturella tekniker används bäst efter specifikationsbaserad tekniker
+                                för att hjälpa till att mäta grundligheten hos testningen genom att utvärdera <strong>täckningen för en viss strukturtyp</strong>.</li>
+                            <li
+                            style="font-size: 20pt; text-align: left; line-height: 24pt;">Täckning är den grad till vilken en struktur har blivit utförd av en testsvit,
+                                uttryckt som en procentsats av de delar som blivit täckta. Om täckningen
+                                inte är 100 % kan det tänkas att fler tester ska konstrueras för att testa
+                                de delar som hoppats över och på så sätt öka täckningsgraden.&nbsp;</li>
+                                <li
+                                style="font-size: 20pt; text-align: left; line-height: 24pt;">På alla testnivåer, men speciellt inom komponenttestning och komponentintegrationstestning,
+                                    kan verktyg användas för att mäta kodtäckning hos beståndsdelarna, som
+                                    t.ex. kodsatser.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Övning</h4>
+
+                        <p>Identifiera och beskriva icke-funktionella testtyper baserade på icke-funktionella
+                            krav</p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Underhållstestning</h3>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">När ett programvarusystem en gång har blivit driftsatt kan det vara i
+                            drift i åratal. Under denna tid har ofta systemet, dess konfiguration och
+                            dess miljö rättats, ändrats eller utökats. Vid dessa tillfällen krävs underhållstestning.
+                            Underhållstestning kan initieras av:</p>
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;"><strong>Ändringar i programvaran</strong>, antingen i form av planerade
+                                frisläpp eller ‟hot-fixar‟.</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;"><strong>Migration</strong> - om programvaran t.ex. flyttas från en plattform
+                                till en annan, eller om data från någon annan applikation behöver migreras
+                                till det underhållna systemet.</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;"><strong>Indragning</strong> - Underhållstestning vid indragning av ett
+                                system kan omfatta testning av datamigrering eller arkivering om det finns
+                                ett krav att bevara data en längre tid.</li>
+                        </ul>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Förutom testning av vad som har förändrats så inkluderar underhållstestningen
+                            också regressions-testning av de delar av systemet som inte har ändrats.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Påverkansanalys</h4>
+
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Att avgöra hur det befintliga systemet påverkas av ändringar kallas påverkansanalys.
+                                Detta är en hjälp till att besluta om hur mycket regressionstestning som
+                                skall göras.</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Förutom testning av vad som har förändrats så inkluderar underhållstestningen
+                                också regressions-testning av de delar av systemet som inte har ändrats.</li>
+                            <li
+                            style="font-size: 20pt; text-align: left; line-height: 24pt;">Omfattningen på underhållstestningen är beroende av risker kopplade till
+                                ändringar, storleken på det befintliga systemet och av storleken på ändringen.</li>
+                                <li
+                                style="font-size: 20pt; text-align: left; line-height: 24pt;">Beroende på vad som ändrats så kan underhållstestningen utföras på alla
+                                    testnivåer och omfatta alla testtyper.</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Quiz</h3>
+
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                        <iframe title="iframe example 1" src="http://www.bluebottle.se/courses/iths/quizpage.html?quiz=1&amp;questions=6"
+                        width="800" height="400"></iframe>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                        <iframe title="iframe example 1" src="http://www.bluebottle.se/courses/iths/chartpage.html?quiz=1&amp;refresh=5"
+                        width="800" height="460"></iframe>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script>
+            Reveal.initialize({"zoomKey":"ctrl","pdfMaxPagesPerSlide":1,"autoPlayMedia":"null",
+            dependencies: [
+            {src: "plugin/notes/notes.js", async: true},
+            {src: "plugin/highlight/highlight.js", async: true, callback: function() {hljs.initHighlightingOnLoad();}},
+            {src: "plugin/zoom-js/zoom.js", async: true},
+            {src: "plugin/search/search.js", async: true},
+            {src: "plugin/katex/katex.js", async: true},
+            {src: "plugin/chart/Chart.min.js"},
+            {src: "plugin/chart/csv2chart.js"}]
+            });
+        </script>
+    </body>
+
+</html>

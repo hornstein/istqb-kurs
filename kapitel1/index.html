@@ -1,0 +1,732 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title></title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/print/paper.css" id="pdf">
+        <link rel="stylesheet" href="css/unreel.css">
+    </head>
+    
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                     <h2>Grunderna inom test</h2>
+
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Varför är test nödvändigt?!</h3>
+
+                        <div class="mceResizable" style="width: 30%; float: left;">
+                            <img src="dummy.png" width="200" height="295">
+                        </div>
+                        <div class="mceResizable" style="width: 70%; float: left;">
+                            <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Programvarusystem är en integrerad del av livet, från verksamhetstillämpningar
+                                (t.ex. bankverksamhet) till konsumentprodufkter(t.ex. bilar).
+                                <br>
+                                <br>De flesta har upplevt att programvaran inte fungerar som man förväntat
+                                sig. Programvara som inte fungerar korrekt kan leda till många problem,
+                                t.ex. förlust av pengar, tid eller affärsmässigt rykte och kan till och
+                                med orsaka skada eller dödsfall.
+                                <br>&nbsp;&nbsp;</p>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>MISSTAG, DEFEKT, FELSYMPTOM</h3>
+
+                        <p>
+                            <img class="" src="defect.png" alt="" width="800" height="297">
+                        </p>
+                        <aside class="notes">
+                            <ul>
+                                <li><strong>misstag</strong> - avhjälps med hjälp av felanalys, utbildning,
+                                    utvecklingsstandarder</li>
+                                <li><strong>defekt</strong> - kan upptäckas i förväg genom granskning och i
+                                    efterhand genom debugging</li>
+                                <li><strong>felsymptom</strong> - kan hittas genom testexekvering</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Testningens roll</h3>
+
+                        <div class="" style="width: 30%; float: left;">
+                            <img src="testbot.png" width="200" height="214">
+                        </div>
+                        <div class="" style="width: 70%; float: left;">
+                            <ul>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Testning av system och dokumentation kan hjälpa till att <strong>reducera risken för att problem uppstår under drift</strong> men
+                                    också <strong>bidra till programvarusystemets kvalitet</strong> om fel rättas
+                                    innan systemet frisläpps för användning i drift.</li>
+                            </ul>
+                            <ul>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Det kan också krävas test av programvara för att <strong>uppnå kontraktsmässiga eller legala krav</strong> eller
+                                    för att uppfylla industrispecifika standarder.</li>
+                            </ul>
+                        </div>
+                        <aside class="notes">
+                            <ul>
+                                <li>reducera risken för att problem uppstår under drift</li>
+                                <li>bidra till programvarusystemets kvalitet</li>
+                                <li>kan krävas för att uppnå kontraktsmässiga eller legala krav</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>test och kvalitet</h3>
+
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Med hjälp av test är det möjligt att mäta kvaliteten på programvaran i
+                                termer av hittade fel för både funktionella och icke-funktionella programvarukrav
+                                och egenskaper (t.ex. pålitlighet, användbarhet, effektivitet, underhållbarhet
+                                och portabilitet).</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Test kan ge ett förtroende för programvarans kvalitet om inga eller få
+                                fel upptäcks. Ett korrekt designat testfall som godkänns minskar den totala
+                                risknivån för ett system. När test hittar fel och dessa åtgärdas, ökar
+                                kvaliteten hos programvarusystemet.</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Erfarenheter från tidigare projekt bör tas tillvara. Genom att förstå
+                                de grundorsakerna till de hittade felen i andra projekt kan processerna
+                                förbättras vilket i sin tur bör förhindra att dessa fel dyker upp igen
+                                och, som en konsekvens, förbättra kvaliteten hos framtida system. Detta
+                                är en aspekt i arbetet att kvalitetssäkra programvaran.</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Test bör vara en del av de kvalitetssäkrande aktiviteterna, tillsammans
+                                med utvecklingsstandarder, utbildning och felanalys.</li>
+                        </ul>
+                        <aside class="notes">
+                            <ul>
+                                <li>Test är bara en del av kvalitetsarbetet</li>
+                                <li>utbildning</li>
+                                <li>riktlinjer</li>
+                                <li>utvecklingsstandarder</li>
+                                <li>felanalys</li>
+                                <li>testare != kvalitetsansvarig</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Hur mycket testning behövs?</h3>
+
+                        <div class="" style="width: 30%; float: left;">
+                            <br>
+                            <img class="" src="balance.jpg" alt="" width="250" height="173">
+                        </div>
+                        <div class="" style="width: 70%; float: left;">
+                            <ul>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Beslut hur mycket testning som behövs <strong>bör ta hänsyn till risknivån</strong>,
+                                    inklusive tekniska, säkerhetsrelaterade och affärsmässiga risker och projektbegränsningar
+                                    som tid och budget.</li>
+                            </ul>
+                            <ul>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">En utförd testning <strong>bör ge tillräcklig information för beslutsunderlag</strong>.
+                                    Detta för att intressenter kan fatta beslut om frisläppande av programvaran
+                                    eller systemet, beslut om att gå vidare till nästa utvecklingssteg eller
+                                    beslut om överlämnande till kund.</li>
+                            </ul>
+                        </div>
+                        <aside class="notes">
+                            <p>Beslut hur mycket testning som behövs:</p>
+                            <ul>
+                                <li>bör ta hänsyn till risknivån</li>
+                                <li>bör ge tillräcklig information för beslutsunderlag.&nbsp;</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Kostnaden för defekter</h3>
+
+                        <div class="" style="width: 50%; float: left;">
+                            <ul>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Studier hos IBM har visat att det introduceras 60 fel (defekter) per tusen
+                                    rader kod från och med kravfasen i projektets start till och med implemenationsfasen.</li>
+                                <li
+                                style="font-size: 16pt; text-align: left; line-height: 20pt;">Enligt Forrester är kostnaden för att rätta till en defekt i produktion
+                                    30 gånger så hög som för att göra motsvarande ändring i krav- eller designfasen.</li>
+                                    <li
+                                    style="font-size: 16pt; text-align: left; line-height: 20pt;">Studier har visat att en bug som upptäcks i produktion i snitt tar 17
+                                        timmar att åtgärda (Eriksson, U., Test och kvalitetssäkring av IT-system,
+                                        2008)</li>
+                            </ul>
+                        </div>
+                        <div class="" style="width: 50%; float: left;">
+                            <br>
+                            <img src="forrester.png" width="500" height="237">
+                        </div>
+                        <aside class="notes">
+                            <p>Viktigt att komma igång tidigt med testaktiviteter:</p>
+                            <ul>
+                                <li>granskning</li>
+                                <li>skapande av testfall</li>
+                                <li>ta fram testdata</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Övning</h3>
+
+                        <p style="text-align: left;">Beskriv, med exempel, på vilket sätt ett fel i ett program kan orsaka
+                            skada för en person, för miljön eller för ett företag.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h2>Övning</h2>
+
+                        <p style="text-align: left;">Förklara och jämför begreppen misstag, defekt, fel, bugg, felsymptom med
+                            hjälp av exempel.</p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Vad är testning?</h3>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Q: Är det bara att exekvera testfall, d.v.s. exekvera programvaran?
+                            <br>A: Det är en del av testningen, men fler testaktiviteter ingår också&nbsp;</p>
+                        <p
+                        style="font-size: 20pt; text-align: left; line-height: 24pt;">Testning innefattar aktiviteter, såsom:</p>
+                            <ul>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">planering och styrning</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">val av testvillkor</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">design och exekvering av testfall</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">kontroll av resultat</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">utvärdering av avslutskriterier</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">rapportering om testprocessen och systemet som testas</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">avslutning eller stängning (t.ex. efter det att en testfas avslutats)</li>
+                                <li
+                                style="font-size: 20pt; text-align: left; line-height: 24pt;">granskning av dokument (även källkod)</li>
+                            </ul>
+                            <aside class="notes">Test är mycket mer än att bara exekvera testfall</aside>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Mål för test</h3>
+
+                        <ul>
+                            <li>att hitta fel</li>
+                            <li>att få förtroende för kvalitetsnivån</li>
+                            <li>att tillhandahålla information för att kunna ta beslut</li>
+                            <li>att förebygga fel</li>
+                        </ul>
+                        <aside class="notes">
+                            <ul>
+                                <li>Tankeprocessen och aktiviteterna som ingår i att designa tester tidigt
+                                    i livscykeln (verifiering av testbasen genom testdesign) kan hjälpa till
+                                    att förhindra att fel introduceras i koden. Granskning av dokument (t.ex.
+                                    kravspecifikationer) och identifiering och lösning av avvikelser hjälper
+                                    också till att förhindra att fel uppstår i koden.</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Olika faser - olika mål</h3>
+
+                        <p style="font-size: 16pt; text-align: left; line-height: 20pt;">Granskning av dokument (t.ex. kravspecifikationer)
+                            <br>Identifiering och lösning av avvikelser hjälper också till att förhindra
+                            att fel uppstår i koden</p>
+                        <p style="font-size: 16pt; text-align: left; line-height: 20pt;">I utveckling - provocera så många felsymptom som möjligt så att fel kan
+                            åtgärdas</p>
+                        <p style="font-size: 16pt; text-align: left; line-height: 20pt;">I acceptanstest - att bekräfta att systemet fungerar som förväntat, få
+                            förtroende för att det uppfyller ställda krav.</p>
+                        <p style="font-size: 16pt; text-align: left; line-height: 20pt;">I vissa fall kan det huvudsakliga målet för test vara att:</p>
+                        <ul>
+                            <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Utvärdera kvaliteten hos programvaran (utan avsikt att åtgärda felen)</li>
+                            <li
+                            style="font-size: 16pt; text-align: left; line-height: 20pt;">Att ge information till intressenter om risken med att frisläppa systemet
+                                vid ett givet tillfälle</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Underhållstest - testning för att konfirmera att inga nya fel har introducerats
+                                    när ändringarna infördes.</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Driftstestning - att utvärdera systemets egenskaper i en driftsliknande
+                                    miljö.</li>
+                        </ul>
+                        <aside class="notes">
+                            <p>Målet med test skiljer sig:</p>
+                            <ul>
+                                <li>vid (krav)granskning - hitta otydligheter, saknade eller motstridiga uppgifter</li>
+                                <li>vid utveckling - provocera felsymptom</li>
+                                <li>vid acceptanstest - validera att systemet fungerar som (kunden) förväntat</li>
+                            </ul>
+                        </aside>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>test vs avlusning</h3>
+
+                        <div class="" style="width: 40%; float: left;">
+                            <img class="" src="debug.jpg" alt="" width="300" height="300">
+                        </div>
+                        <div class="" style="width: 60%; float: left;">
+                            <ul>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Avlusning och test är olika saker.</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Dynamisk testning kan visa på felsymptom som orsakas av fel.</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Avlusning är den utvecklingsaktivitet som identifierar, analyserar och
+                                    avlägsnar orsaken till felsymptomet.</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Efterföljande omtest av rättningar av en testare försäkrar att rättningen
+                                    verkligen åtgärdade felsymptomen.</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Ansvaret för varje aktivitet är vanligtvis att testare testar och utvecklare
+                                    avlusar.</li>
+                            </ul>
+                        </div>
+                        <aside class="notes">debugging - hitta orsak till felsymptom, görs av utvecklare</aside>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h2>Övning</h2>
+
+                        <p style="text-align: left;">Ge exempel på syften med testning i olika faser i programvarans livscykel</p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Sju testprinciper</h3>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Ett antal testprinciper har föreslagits under de senaste 40 åren och de
+                            erbjuder allmänna riktlinjer som är gemensamma för all testning.</p>
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 1 – Test visar att det finns fel</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 2 – Uttömmande testning är omöjlig</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 3 – Tidig testning</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 4 – Ansamlingar av fel</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 5 – Immunitets- paradoxen</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 6 – Test beror på sammanhang</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 7 – Frånvaro-av-fel-fallgropen</li>
+                        </ul>
+                        <aside class="notes">7 viktiga principer som gäller all testning</aside>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Princip 1 – Test visar att det finns fel</h4>
+
+                        <p style="text-align: left;">Test kan visa att fel finns men kan inte visa att det inte finns några
+                            fel. Test minskar sannolikheten för att oupptäckta fel finns i programvaran
+                            men, även om inga fel hittas, så är det inget bevis för att programvaran
+                            är felfri.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Princip 2 – Uttömmande testning är omöjlig</h4>
+
+                        <p style="text-align: left;">Att testa allt (alla kombinationer av inmatningar och förutsättningar)
+                            är inte lämpligt, förutom i triviala fall. Istället för uttömmande testning
+                            används risker och prioriteringar för att fokusera testansträngningarna.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Princip 3 – Tidig testning</h4>
+
+                        <p style="text-align: left;">För att hitta fel tidigt skall testaktiviteterna påbörjas så tidigt som
+                            möjligt i programvarans eller systemets livscykel och fokuseras på definierade
+                            mål.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Princip 4 – Ansamlingar av fel</h4>
+
+                        <div class="" style="width: 40%; float: left;">
+                            <img class="" src="bugs.jpg" alt="" width="284" height="177">
+                        </div>
+                        <div class="" style="width: 60%; float: left;">
+                            <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Testinsatsen skall fokuseras proportionellt mot den förväntade, och senare
+                                konstaterade, feltätheten hos modulerna. Ett litet antal moduler innehåller
+                                de flesta fel som upptäcks vid testning före frisläppande eller är upphov
+                                till flest felsymptom i drift.</p>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Princip 5 – Immunitets- paradoxen</h4>
+
+                        <div class="" style="width: 40%; float: left;">&nbsp;
+                            <img class="" src="immune.png" alt="" width="299" height="282">
+                        </div>
+                        <div class="" style="width: 60%; float: left;">
+                            <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Om samma tester upprepas gång på gång så kommer samma uppsättning av testfall
+                                till slut inte att upptäcka några nya fel. För att övervinna denna ”immunitets-paradox”
+                                behöver testfallen regelbundet granskas och revideras och annorlunda tester
+                                behöver skrivas för att motionera olika delar av programvaran eller systemet
+                                för att möjligen hitta fler fel.</p>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Princip 6 – Test beror på sammanhang</h4>
+
+                        <p style="text-align: left;">Testning sker på olika sätt i olika sammanhang. Säkerhetskritisk programvara
+                            testas till exempel inte på samma sätt som ett e-handels system.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Princip 7 – Frånvaro-av-fel-fallgropen</h4>
+
+                        <p style="text-align: left;">Att hitta och åtgärda fel hjälper inte om systemet som byggts är oanvändbart
+                            och inte uppfyller användarnas behov och förväntningar.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Övning</h3>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Förklara de sju grundläggande principerna inom test</p>
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 1 – Test visar att det finns fel</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 2 – Uttömmande testning är omöjlig</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 3 – Tidig testning</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 4 – Ansamlingar av fel</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 5 – Immunitets- paradoxen</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 6 – Test beror på sammanhang</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Princip 7 – Frånvaro-av-fel-fallgropen</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Grundläggande testprocess</h3>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Den mest synliga delen av testprocessen är testexekveringen. Men för att
+                            en testprocess ska vara effektiv och ändamålsenlig, bör testplaner även
+                            innehålla information om hur mycket tid som skall användas för att planera
+                            testerna, designa testfallen, förbereda exekveringen och utvärdera resultaten.
+                            Den grundläggande testprocessen består av följande huvudaktiviteter:</p>
+                        <ol>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">testplanering och styrning</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">testanalys och design</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">realiserande och exekvering av tester</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">utvärdering av avslutskriterium och rapportering</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">testavslutsaktiviteter</li>
+                        </ol>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Testplanering och styrning</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Testplanering är den aktivitet som görs för att definiera testmålen och
+                            specificera övriga testaktiviteterna med syfte att nå målen och att slutföra
+                            uppdraget.</p>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Teststyrning är den pågående aktivitet som jämför faktiskt framåtskridande
+                            mot plan och rapporterar status och avvikelser från planen. I detta ingår
+                            att vidta nödvändiga åtgärder för att slutföra uppdraget och att nå målet
+                            för projektet. För att kunna styra testarbetet bör testaktiviteterna övervakas
+                            under hela projektet.&nbsp;<span style="font-size: 20pt;">Testplaneringen tar också hänsyn till återkoppling från övervakning och uppföljande aktiviteter.</span>
+
+                        </p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Testanalys och design</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Testanalys och design är den aktivitet där generella testmål omvandlas
+                            till påtagliga testvillkor och testfall.</p>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Analys och design har följande huvuduppgifter:</p>
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Att granska testbasen (såsom krav, risknivå1, riskanalysrapporter, specifikationer,
+                                arkitektur, design, gränssnitt).</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Evaluera testbarheten av testbasen och testobjekten</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Att identifiera och prioritera de testvillkor som baserats på analys av
+                                testobjekten, specifikationen samt programvarans beteende och struktur.</li>
+                            <li
+                            style="font-size: 20pt; text-align: left; line-height: 24pt;">Att utveckla och prioritera högnivåtestfall.</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Att identifiera nödvändiga testdata för testvillkor och testfall.</li>
+                                <li
+                                style="font-size: 20pt; text-align: left; line-height: 24pt;">Att designa hur testmiljön skall sättas upp och att identifiera den infrastruktur
+                                    och de verktyg som behövs.</li>
+                                    <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Att skapa en dubbelriktad spårbarhet mellan testbas och testfall.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Realiserande och exekvering av tester</h4>
+
+                        <p style="font-size: 16pt; text-align: left; line-height: 20pt;">Realiserande och exekvering av tester är den aktivitet där testprocedur
+                            eller skript definieras genom att kombinera testfall i en speciell ordning
+                            och inkludera nödvändig information som behövs för exekvering, miljön iordningställs
+                            och testerna körs.</p>
+                        <p style="font-size: 16pt; text-align: left; line-height: 20pt;">Realiserande och exekvering av tester har följande huvuduppgifter:</p>
+                        <ul>
+                            <li style="font-size: 14pt; text-align: left; line-height: 18pt;">Färdigställa, realisera och prioritera testfall (inklusive identifiering
+                                av testdata).</li>
+                            <li style="font-size: 14pt; text-align: left; line-height: 18pt;">Att utveckla och prioritera testprocedurer, skapa testdata och, valfritt,
+                                förbereda testexekveringsplattform samt skriva automatiserade testskript.</li>
+                            <li
+                            style="font-size: 14pt; text-align: left; line-height: 18pt;">Att skapa testsviter baserade på testprocedur för en effektiv testexekvering.</li>
+                                <li
+                                style="font-size: 14pt; text-align: left; line-height: 18pt;">Att verifiera att testmiljön är rätt uppsatt.</li>
+                                    <li style="font-size: 14pt; text-align: left; line-height: 18pt;">Verifiera och uppdatera spårbarheten mellan testbas och testfall.</li>
+                                    <li
+                                    style="font-size: 14pt; text-align: left; line-height: 18pt;">Att exekvera testprocedur, antingen manuellt eller genom att använda testexekveringsverktyg,
+                                        enligt det planerade schemat.</li>
+                                        <li style="font-size: 14pt; text-align: left; line-height: 18pt;">Att logga utfallet av testexekveringen och spela in identiteter och versioner
+                                            av programvaran som testas, testverktyg och testvara.</li>
+                                        <li style="font-size: 14pt; text-align: left; line-height: 18pt;">Att jämföra aktuellt resultat med förväntat resultat.</li>
+                                        <li style="font-size: 14pt; text-align: left; line-height: 18pt;">Att rapportera skillnader i form av avvikelser och analysera dem med syftet
+                                            att fastställa orsaken till dem (t.ex. ett fel i koden, i specificerat
+                                            testdata, i testdokumentet eller ett misstag i utförandet av testen).</li>
+                                        <li
+                                        style="font-size: 14pt; text-align: left; line-height: 18pt;">Att repetera testaktiviteterna som ett resultat av gjorda åtgärder för
+                                            varje avvikelse. Det kan till exempel vara omexekvering av en test som
+                                            tidigare gått fel med syfte att bekräfta att felet är åtgärdat (omtestning
+                                            av felrättningar), exekvering av ett korrekt test och/eller exekvering
+                                            av tester med syfte att försäkra sig om att inga fel har introducerats
+                                            i oförändrade delar av programvaran eller att felrättningarna inte blottställde
+                                            andra fel (regressionstestning).</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Utvärdering av avslutskriterier och rapportering</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Att utvärdera avslutskriterier är den aktivitet där testexekveringen utvärderas
+                            mot de definierade målen. Detta bör göras för varje testnivå.</p>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Utvärdering av avslutskriterier har följande huvuduppgifter:</p>
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Att kontrollera testloggar mot de avslutskriterier som specificerats vid
+                                testplaneringen.</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Att bedöma om fler tester behövs eller om avslutskriterierna behöver ändras.</li>
+                            <li
+                            style="font-size: 20pt; text-align: left; line-height: 24pt;">Att skriva en slutlig testrapport avsedd för intressenterna.</li>
+                        </ul>
+                        <aside class="notes">Avslutskriterier - kriterier som måste vara uppfyllda för att testerna
+                            ska avslutas, exempelvis att alla högprioriterade testfall ska vara exekverade
+                            och att inga öppna fel av högsta allvarlighetsgrad får kvarstå. Kallas
+                            även slutkriterier.</aside>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Testavslutsaktiviteter</h4>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Vid testavslut samlas data in från de avslutade aktiviteterna för att
+                            sammanfatta erfarenheter, fakta och mätetal och för att arkivera testmaterial.
+                            Detta kan ske t.ex. vid frisläppande av ett programvarusystem, vid ett
+                            fullbordat (eller avbrutet) testprojekt, när en milstolpe har nåtts eller
+                            en underhållsutgåva har blivit färdig.</p>
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Vid testavslut ingår följande huvuduppgifter:</p>
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Att kontrollera vilka planerade leverabler som blivit levererade.</li>
+                            <li
+                            style="font-size: 20pt; text-align: left; line-height: 24pt;">Att kontrollera att avvikelserapporter är stängda och att initiera ändringsbegäran
+                                för de som fortfarande är öppna.</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Att kontrollera den dokumentation som visar godkännande av systemet.</li>
+                                <li
+                                style="font-size: 20pt; text-align: left; line-height: 24pt;">Att göra klart och arkivera testvaran, testmiljön och testinfrastrukturen
+                                    för senare återanvändning.</li>
+                                    <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Att lämna över testvaran till förvaltningsorganisationen.</li>
+                                    <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Att analysera lärdomar för att identifiera nödvändiga förändringar av
+                                        framtida utgåvor och projekt.</li>
+                                    <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Att använda insamlad information till att förbättra testmognaden.</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Testningens psykologi</h3>
+
+                        <div class="" style="width: 40%; float: left;">
+                            <br>
+                            <img class="" src="cogbrain.jpg" alt="" width="300" height="199">
+                        </div>
+                        <div class="" style="width: 60%; float: left;">
+                            <p style="text-align: left;">Det tankesätt som man måste ha när man testar (vill försöka visa att något
+                                inte fungerar) skiljer sig från det man har när man utvecklar programvara
+                                (vill visa att något fungerar).</p>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Oberoende</h3>
+
+                        <p style="font-size: 16pt; text-align: left; line-height: 20pt;">En viss grad av oberoende (för att undvika författarens förutfattade mening)
+                            gör ofta att testaren blir mer effektiv i att hitta fel och felsymptom.
+                            Oberoendet är emellertid inte en ersättning för förtrolighet, utvecklare
+                            kan själv hitta många fel i sin egen kod på ett effektivt sätt. Flera nivåer
+                            av oberoende kan definieras, listade nedan från lågt till högt:</p>
+                        <ul>
+                            <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Tester utvecklade av personer som skrev den programvara som skall testas
+                                (låg nivå av oberoende).</li>
+                            <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Tester utvecklade av andra personer (t ex från utvecklingsgruppen).</li>
+                            <li
+                            style="font-size: 16pt; text-align: left; line-height: 20pt;">Tester utvecklade av personer som tillhör en annan organisatorisk grupp
+                                (t.ex. en oberoende testgrupp) eller testspecialister (t.ex. en användbarhetstest-
+                                eller prestandatestspecialist).</li>
+                                <li style="font-size: 16pt; text-align: left; line-height: 20pt;">Tester utvecklade av personer från en annan organisation eller annat företag
+                                    (d.v.s. outsourcing eller certifiering av en extern organisation).</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Testarens egenskaper</h3>
+
+                        <div class="" style="width: 40%; float: left;">
+                            <br>
+                            <img class="" src="creativity.jpg" alt="" width="300" height="200">
+                        </div>
+                        <div class="" style="width: 60%; float: left;">
+                            <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Att identifiera felsymptom under testningen kan uppfattas som kritik mot
+                                produkten och mot utvecklaren eller författaren. Testning blir därför ofta
+                                sedd som en destruktiv aktivitet trots att det är mycket konstruktivt när
+                                det gäller hantering av produktrisker. Att leta efter felsymptom i ett
+                                system kräver nyfikenhet, professionell pessimism, ett kritiskt öga, uppmärksamhet
+                                på detaljer, god kommunikation med utvecklare och en erfarenhet på vilken
+                                man kan basera felgissning.</p>
+                        </div>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Kommunicera fel</h3>
+
+                        <p style="font-size: 20pt; text-align: left; line-height: 24pt;">Kommunikationsproblem kan uppstå, speciellt om testarna bara ses som budbärare
+                            av oönskade nyheter om fel, defekter och avvikelser. Det finns flera sätt
+                            att förbättra kommunikationen och förhållandena mellan testare och andra:</p>
+                        <ul>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Börja med samarbete istället för strider – påminn alla om det gemensamma
+                                målet att få ett system med bättre kvalitet.</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Kommunicera avvikelser hos produkten på ett neutralt, faktafokuserat sätt
+                                utan att kritisera personen som skapat den, skriv till exempel objektiva
+                                och faktamässiga avvikelserapporter och granska det som hittas.</li>
+                            <li
+                            style="font-size: 20pt; text-align: left; line-height: 24pt;">Försök att förstå hur den andra personen känner sig och varför han/hon
+                                reagerar som han/hon gör.</li>
+                                <li style="font-size: 20pt; text-align: left; line-height: 24pt;">Bekräfta att den andra personen har förstått vad du har sagt och tvärtom.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Övningar</h3>
+
+                        <ol>
+                            <li style="text-align: left;">När det gäller testning, vem har den högsta graden av oberoende?</li>
+                            <li
+                            style="text-align: left;">Diskutera för- och nackdelar med att låta utvecklarna testa sin egen kod.</li>
+                                <li
+                                style="text-align: left;">Föreslå tre sätt att undvika konfrontationer mellan testare och utvecklare</li>
+                        </ol>
+                    </section>
+                </section>
+                <section data-background-color="#ffffff" data-background-image="iths.png"
+                data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                     <h3>Etiska regler</h3>
+
+                    <ul>
+                        <li style="font-size: 20pt; text-align: left; line-height: 24pt;">ALLMÄNHETEN - Certifierade programvarutestare skall handla i allmänhetens
+                            intresse.</li>
+                        <li style="font-size: 20pt; text-align: left; line-height: 24pt;">KUND OCH ARBETSGIVARE - Certifierade programvarutestare skall agera i
+                            kunds och arbetsgivares intresse, i överensstämmelse med allmänhetens intresse.</li>
+                        <li
+                        style="font-size: 20pt; text-align: left; line-height: 24pt;">PRODUKT - Certifierade programvarutestare skall försäkra sig om att de
+                            leverabler de tillhandahåller (för produkter och system som de testar)
+                            motsvarar högsta möjliga professionella standard.</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">OMDÖME - Certifierade programvarutestare ska upprätthålla integritet och
+                                oberoende sina professionella omdömen.</li>
+                            <li style="font-size: 20pt; text-align: left; line-height: 24pt;">LEDNING - Certifierade testledare och testkoordinatorer inom programvaruutveckling
+                                skall bidra med och främja etiska tillvägagångssätt vid ledningen av programvaruprojekt.</li>
+                            <li
+                            style="font-size: 20pt; text-align: left; line-height: 24pt;">YRKESROLL - Certifierade programvarutestare skall främja integriteten
+                                och anseendet för testyrket i överensstämmelse med allmänhetens intresse.</li>
+                                <li
+                                style="font-size: 20pt; text-align: left; line-height: 24pt;">KOLLEGOR - Certifierade programvarutestare skall vara rättvisa mot och
+                                    stötta sina kollegor samt främja samarbete med programvaruutvecklare.</li>
+                                    <li
+                                    style="font-size: 20pt; text-align: left; line-height: 24pt;">SJÄLV – Certifierade testare skall delta i ett livslångt lärande avseende
+                                        sitt yrkes praxis och främja ett etiskt tillvägagångssätt gentemot yrkets
+                                        praxis.</li>
+                    </ul>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h2>Quiz</h2>
+
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                        <iframe title="iframe example 1" src="http://www.bluebottle.se/courses/iths/quizpage.html?quiz=0&amp;questions=7"
+                        width="800" height="400">&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;p&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;Your
+                            browser does not support iframes.&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;/p&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;</iframe>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                        <iframe title="iframe example 1" src="http://www.bluebottle.se/courses/iths/chartpage.html?quiz=0&amp;refresh=5"
+                        width="800" height="460">&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;p&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;Your
+                            browser does not support iframes.&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;/p&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;</iframe>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Misstag och myter kring test</h3>
+
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Misstag 1 - Management via email</h3>
+
+                        <p>Uppmuntra kommunikation ansikte mot ansikte</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Misstag 2 - Testaren ansvarig för kvalitet</h4>
+
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h3>Misstag 3 - Utvärdera enligt...</h3>
+
+                        <ul>
+                            <li style="text-align: left;">Testaren på antal funna defekter</li>
+                            <li style="text-align: left;">Utvecklaren på antal producerade defekter</li>
+                        </ul>
+                        <p style="text-align: left;">Konsekvenser:</p>
+                        <ul>
+                            <li style="text-align: left;">Friktion, konflikter mellan "gruppen"</li>
+                            <li style="text-align: left;">Fokus på lätt att hitta ännu triviala buggar</li>
+                            <li style="text-align: left;">Dold information</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Misstag 4 - Brist på kunskap om test</h4>
+
+                        <p>Många betraktar inte test som en teknisk uppgift.</p>
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Misstag 5 - Separera utvecklare och testare</h4>
+
+                    </section>
+                    <section data-background-color="#ffffff" data-background-image="iths.png"
+                    data-background-size="25%" data-background-position="bottom" data-background-repeat="no-repeat">
+                         <h4>Misstag 6 - Börja testautomatisera när du är försenad</h4>
+
+                    </section>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script>
+            Reveal.initialize({"zoomKey":"ctrl","pdfMaxPagesPerSlide":1,"autoPlayMedia":"null",
+            dependencies: [
+            {src: "plugin/notes/notes.js", async: true},
+            {src: "plugin/highlight/highlight.js", async: true, callback: function() {hljs.initHighlightingOnLoad();}},
+            {src: "plugin/zoom-js/zoom.js", async: true},
+            {src: "plugin/search/search.js", async: true},
+            {src: "plugin/katex/katex.js", async: true},
+            {src: "plugin/chart/Chart.min.js"},
+            {src: "plugin/chart/csv2chart.js"}]
+            });
+        </script>
+    </body>
+
+</html>
